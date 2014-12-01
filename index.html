@@ -1,6 +1,8 @@
     <!DOCTYPE html>
 <html ng-app="ports">
   <head>
+	<!-- Willos fav charset -->
+	  <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <meta name="description" content="Ports: Povo offers rooms to study!">
@@ -20,12 +22,60 @@
     <script src="js/script.js"></script>
     <!-- Title -->
     <title> PORTS - Ports Offers Rooms To Students</title>
+	<!--IE compatibility mode-->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
   </head>
     
-    <body>
-        <header>
-            <h1>PORTS</h1>
-        </header>
+    <body>		
+		<!--Fixed Navbar WorkInProgress-->
+		<nav class="navbar navbar-fixed-top" role="navigation">
+			<div class="container">
+				<div class="navbar-header" style="border-bottom: 4px solid #ced0d1;">
+							<button class="navbar-toggle collapsed" aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button">
+								<span class="sr-only"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+								<span class="icon-bar"></span>
+							</button>
+					<a class="navbar-brand" href="#">
+						<img src="bin/png/University_Trento_logo.png">
+						<span id="title"><h1>P<img id="ports-image" src="bin/png/photo_2014-12-01_18-35-25.jpg">RTS</h1></span>
+						<span id="subtitle">PovoOffersRoomsToStudy</span>
+					</a>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li style="border-bottom: 4px solid #3493e0;" class="active">
+						<a href="index.html">
+							<img src="bin/png/list.png">
+							<div>Elenco</div>
+						</a>
+					</li>
+					<li style="border-bottom: 4px solid #e32900;">
+						<a href="/partials/room-map.html">
+							<img src="bin/png/map2.png">
+							<div>Mappa</div>
+						</a>
+					</li>
+					<li style="border-bottom: 4px solid #00a24c;">
+						<a href="/partials/search.html">
+							<img src="bin/png/magnifier.png">
+							<div>Cerca</div>
+						</a>
+					</li>
+					<li style="border-bottom: 4px solid #f9d63f;">
+						<a href="/partials/timetable.html">
+							<img src="bin/png/clock.png">
+							<div>Orari</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</nav>		
+		<!--fine nav -->
+		
+		
+		
         
         <section>
             <p>
