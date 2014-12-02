@@ -9,7 +9,7 @@
     <meta name="author" content="TrentoLeaf+">
     <link rel="shortcut icon" href="./img/favicon.ico">
     <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">-->
-    <link type="text/css" rel="stylesheet" href="bin/BootStrap/dist/bootstrap.min.css">
+    <link type="text/css" rel="stylesheet" href="bin/BootStrap/dist/css/bootstrap.min.css">
     <link type="text/css" rel="stylesheet" href="css/style.css">
     <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>-->
     <script type="text/javascript" src="bin/Angular/angular.min.js"></script>
@@ -46,25 +46,25 @@
 				</div>
 				<ul class="nav navbar-nav navbar-right">
 					<li style="border-bottom: 4px solid #3493e0;" class="active">
-						<a href="index.html">
+						<a href="#">
 							<img src="bin/png/list.png">
 							<div>Elenco</div>
 						</a>
 					</li>
 					<li style="border-bottom: 4px solid #e32900;">
-						<a href="/partials/room-map.html">
+						<a href="#/map">
 							<img src="bin/png/map2.png">
 							<div>Mappa</div>
 						</a>
 					</li>
 					<li style="border-bottom: 4px solid #00a24c;">
-						<a href="/partials/search.html">
+						<a href="#/search">
 							<img src="bin/png/magnifier.png">
 							<div>Cerca</div>
 						</a>
 					</li>
 					<li style="border-bottom: 4px solid #f9d63f;">
-						<a href="/partials/timetable.html">
+						<a href="#/timetable">
 							<img src="bin/png/clock.png">
 							<div>Orari</div>
 						</a>
@@ -74,19 +74,22 @@
 		</nav>		
 		<!--fine nav -->
 		
-		
-		
-        
-        <section>
-            <p>
-                {{ "It seems to " + "work!" }}
-            </p>
-        </section>
 
-        <section ng-view>
-        </section>
+        <div class="container">
 
-        <footer>
+          <section>
+                <p>
+                    {{ "It seems to " + "work!" }}
+                </p>
+            </section>
+             <section>
+                <div ng-view></div>
+            </section>
+
+         </div>
+
+
+        <footer class="footer">
             <p> TrentoLeaf+ &copy;</p>
         </footer>
     </body>
