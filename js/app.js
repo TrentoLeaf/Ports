@@ -1,3 +1,20 @@
+
+$(document).ready(function(){
+    // visualizzazione titolo 'PORTS' completo
+    $(".brandtitle").hover(function(){
+
+        $(".brandtxt").show(500);
+    },
+                           function(){
+        $(".brandtxt").hide(2000);
+    });
+    //END visualizzazione titolo 'PORTS' completo
+
+
+});
+
+
+
 'use strict';
 
 (function() {

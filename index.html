@@ -1,85 +1,104 @@
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html ng-app="ports">
-  <head>
-	<!-- Willos fav charset -->
-    	<link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
-    <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ports: Povo offers rooms to study!">
-    <meta name="author" content="TrentoLeaf+">
-    <link rel="shortcut icon" href="./img/favicon.ico">
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">-->
-    <link type="text/css" rel="stylesheet" href="bin/BootStrap/dist/css/bootstrap.min.css">
-    <link type="text/css" rel="stylesheet" href="css/style.css">
-    <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>-->
-    <script type="text/javascript" src="bin/Angular/angular.min.js"></script>
-    <script type="text/javascript" src="bin/Angular/angular-route.min.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/controllers.js"></script>
-    <!-- jQuery -->
-    <script src="bin/jQuery/jquery-2.1.0.min.js"></script>
-    <!-- JavaScript -->
-    <script src="js/script.js"></script>
-    <!-- Title -->
-    <title> PORTS - Ports Offers Rooms To Students</title>
-	<!--IE compatibility mode-->
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-  </head>
-    
+    <head>
+        <meta charset="utf-8">
+
+        <meta name="author" content="TrentoLeaf+">
+        <title>Ports - Find your right study space!</title>
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+        <meta name="description" content="Ports: Povo offers rooms to study!">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+        <!-- Willos fav charset -->
+        <link href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css'>
+
+        <!-- SOURCE LINKS -->
+        <!-- CSS -->
+        <link type="text/css" rel="stylesheet" href="bin/BootStrap/dist/css/bootstrap.min.css" >
+        <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">-->
+        <link type="text/css" rel="stylesheet" href="css/style.css">
+
+        <!-- JAVASCRIPT -->
+        <script src="bin/jQuery/jquery-2.1.0.min.js"></script>
+        <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+        <script src="bin/BootStrap/dist/js/bootstrap.min.js"></script>
+        <!--<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>-->
+        <script type="text/javascript" src="bin/Angular/angular.min.js"></script>
+        <script type="text/javascript" src="bin/Angular/angular-route.min.js"></script>
+        <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>-->
+
+        <script type="text/javascript" src="js/controllers.js"></script>
+        <script src="js/script.js"></script>
+        <script type="text/javascript" src="js/app.js"></script>
+
+        <!--IE compatibility mode-->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    </head>
+
     <body>		
-		<!--Fixed Navbar WorkInProgress-->
-		<nav class="navbar navbar-default" role="navigation">
-		  <!—Logo e pulsante per barra ridimensionata -->
-		  <div class="navbar-header">
-			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-			  <span class="sr-only">Espandi barra di navigazione</span>
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>
-			  <span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="index.html">
-				<h1 class="navbar-brand text-uppercase">PORTS</h1>
-			</a>
-		  </div>
-		  <!—Elementi della barra -->
-		  <div class="collapse navbar-collapse navbar-ex1-collapse">
-			<ul class="nav navbar-nav navbar-right">
-			  <li class="active" style="border-bottom: 4px solid blue">
-						<a href="#">
-							<img src="bin/img/png/list.png">
-							<div class="text-center">Elenco</div>
-						</a>
-					</li>
-					<li style="border-bottom: 4px solid red">
-						<a href="#/map">
-							<img src="bin/img/png/map2.png">
-							<div class="text-center">Mappa</div>
-						</a>
-					</li>
-					<li style="border-bottom: 4px solid #0ae00a">
-						<a href="#/search">
-							<img src="bin/img/png/magnifier.png">
-							<div class="text-center">Cerca</div>
-						</a>
-					</li>
-					<li style="border-bottom: 4px solid yellow">
-						<a href="#/timetable">
-							<img src="bin/img/png/clock.png">
-							<div class="text-center">Orari</div>
-						</a>
-					</li>
-			</ul>
-		  </div><!-- /.navbar-collapse -->
-		</nav>
-		<!--fine nav -->
-		
-		<!-- Contenuto dinamico -->
+        <!--Fixed Navbar WorkInProgress-->
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+                <!-- Mobile nav button -->
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle naviation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- Title and Logo -->
+                <a class="navbar-brand" href="#">
+                    <img class="logo img-responsive" alt="Ports Logo" src="img/leaf_logo.png"></a>
+                <a class="navbar-brand brandtitle" href="#">
+                    <!--NB: non ci devono essere spazi tra gli span-->
+                    <span class="brandcapital">P</span><span class="brandtxt">ovo&nbsp</span><span class="brandcapital">O</span><span class="brandtxt">ffer&nbsp</span><span class="brandcapital">R</span><span class="brandtxt">ooms&nbsp</span><span class="brandcapital">T</span><span class="brandtxt">o&nbsp</span><span class="brandcapital">S</span><span class="brandtxt">tudy&nbsp</span>
+                </a>
+            </div>
+
+            <!-- nav items -->
+            <div class="collapse navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="navelem active">
+                        <a href="#">
+                            <img class="navbar_icon img-responsive center-block" alt="elenco" src="img/navbar_icons/mono_black/list.png">
+                            <div class="text-center">Elenco</div>
+                        </a>
+                        <hr id="line_elenco">
+                    </li>
+                    <li class="navelem">
+                        <a href="#/map">
+                            <img class="navbar_icon img-responsive center-block" alt="mappa" src="img/navbar_icons/default/map2.png">
+                            <div class="text-center">Mappa</div>
+                        </a>
+                        <hr id="line_mappa">
+                    </li>
+                    <li class="navelem">
+                        <a href="#/search">
+                            <img class="navbar_icon img-responsive center-block" alt="cerca" src="img/navbar_icons/default/magnifier.png">
+                            <div class="text-center">Ricerca Avanzata</div>
+                        </a>
+                        <hr id="line_cerca">
+                    </li>
+                    <li class="navelem">
+                        <a href="#/timetable">
+                            <img class="navbar_icon img-responsive center-block" alt="orari" src="img/navbar_icons/default/clock2.png">
+                            <div class="text-center">Orari Strutture</div>
+                        </a>
+                        <hr id="line_orari">
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <!--fine nav -->
+
+        <!-- Contenuto dinamico -->
         <div class="container">
-             <section>
+            <section>
                 <div ng-view></div>
             </section>
 
-         </div>
+        </div>
 
         <footer class="footer">
             <p> TrentoLeaf+ &copy;</p>
