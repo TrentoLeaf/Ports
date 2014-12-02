@@ -2,6 +2,64 @@ img{
 	width: 90px;
 	height : 90px;
 }
+
+.brandtxt {
+    display: none;
+}
+
+.logo {
+    width: 30px;
+    height: 30px;
+}
+
+.navbar_icon {
+    width : 50px;
+    height : 50px;
+}
+
+.nav > li > a {
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+
+@media screen and (min-width: 768px) {
+
+    .logo {
+        width: 60px;
+        height: 60px;
+    }
+
+    .navelem {
+        width: 150px;
+        height: auto;
+    }
+
+    .navelem hr {
+        margin: 0px;
+        height: 0.5em;
+    }
+
+    #line_elenco {
+        background-color: #01A0E3;
+    }
+    #line_mappa {
+        background-color: #E71E25;
+    }
+    #line_cerca {
+        background-color: #069B4B;
+    }
+    #line_orari {
+        background-color: #FBCA01;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .navelem hr {
+       display: none;
+    }
+}
+
 /*
 tr:first-child{
 	background: #FFF;
