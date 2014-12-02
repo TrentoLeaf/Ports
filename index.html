@@ -38,35 +38,34 @@
 			  <span class="icon-bar"></span>
 			</button>
 			<a class="navbar-brand" href="index.html">
-				<img src="bin/png/University_Trento_logo.png">P<img src="bin/png/photo_2014-12-01_18-35-25.jpg">RTS
-				PovoOffersRoomsToStudy
+				<h1 class="navbar-brand text-uppercase">PORTS</h1>
 			</a>
 		  </div>
 		  <!—Elementi della barra -->
 		  <div class="collapse navbar-collapse navbar-ex1-collapse">
 			<ul class="nav navbar-nav navbar-right">
-			  <li class="active">
+			  <li class="active" style="border-bottom: 4px solid blue">
 						<a href="#">
-							<img src="bin/png/list.png">
-							<div>Elenco</div>
+							<img src="bin/img/png/list.png">
+							<div class="text-center">Elenco</div>
 						</a>
 					</li>
-					<li>
+					<li style="border-bottom: 4px solid red">
 						<a href="#/map">
-							<img src="bin/png/map2.png">
-							<div>Mappa</div>
+							<img src="bin/img/png/map2.png">
+							<div class="text-center">Mappa</div>
 						</a>
 					</li>
-					<li>
+					<li style="border-bottom: 4px solid #0ae00a">
 						<a href="#/search">
-							<img src="bin/png/magnifier.png">
-							<div>Cerca</div>
+							<img src="bin/img/png/magnifier.png">
+							<div class="text-center">Cerca</div>
 						</a>
 					</li>
-					<li>
+					<li style="border-bottom: 4px solid yellow">
 						<a href="#/timetable">
-							<img src="bin/png/clock.png">
-							<div>Orari</div>
+							<img src="bin/img/png/clock.png">
+							<div class="text-center">Orari</div>
 						</a>
 					</li>
 			</ul>
@@ -74,20 +73,13 @@
 		</nav>
 		<!--fine nav -->
 		
-
+		<!-- Contenuto dinamico -->
         <div class="container">
-
-          <section>
-                <p>
-                    {{ "It seems to " + "work!" }}
-                </p>
-            </section>
              <section>
                 <div ng-view></div>
             </section>
 
          </div>
-
 
         <footer class="footer">
             <p> TrentoLeaf+ &copy;</p>
