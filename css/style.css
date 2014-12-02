@@ -1,3 +1,4 @@
+
 .brandtxt {
     display: none;
 }
@@ -54,3 +55,10 @@
        display: none;
     }
 }
+
+/*
+tr:first-child{
+	background: #FFF;
+	color:white;
+}
+*/
