@@ -44,7 +44,7 @@ $(document).ready(function(){
         }).when('/timetable', {
             templateUrl : 'partials/timetable.html'
         }).when('/about', {
-            templateUrl : 'partials/about.html'
+            templateUrl : 'partials/about/about.html'
         }).otherwise({
             redirectTo : '/list'
         });
