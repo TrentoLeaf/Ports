@@ -11,7 +11,9 @@
         }).when('/details/:number/map', {
             templateUrl : 'partials/room-map.html'
         }).when('/map', {
-            templateUrl : 'partials/map.html'
+            templateUrl : 'partials/preselect-map.html'
+        }).when('/map-res', {
+          templateUrl : 'partials/map.html'
         }).when('/search', {
             templateUrl : 'partials/search.html'
         }).when('/search/:building/:level/:room/:day', {
