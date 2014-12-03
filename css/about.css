@@ -1,27 +1,9 @@
 .row-about {
     height:250px;
     padding-top: 10px;
+    padding-bottom: 20px;
+    border-bottom: 20px;
 }
 
-.descrizione ul {
-    list-style: none;
-    text-decoration: none;
-    padding-left: 0px;
-}
 
-@media screen and (max-width:988px) and (min-width:515px) {
-    .descrizione ul {
-        display: inline-flex;
-        list-style: none;
-    }
-    .descrizione ul li img {
-        width: 300px;
-        padding: 10px;
-    }
-}
 
-@media screen and (max-width:515px) {
-    .descrizione ul li img {
-        width:  200px;
-    }
-}
