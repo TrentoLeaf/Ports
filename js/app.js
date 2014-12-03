@@ -23,6 +23,8 @@
             templateUrl : 'partials/about.html'
         }).otherwise({
             redirectTo : '/list'
+         }).when('/results', {
+            templateUrl : 'partials/results.html'
         });
     } ]);
 })();
