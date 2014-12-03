@@ -30,9 +30,9 @@ $(document).ready(function(){
     app.config([ '$routeProvider', function($routeProvider) {
         $routeProvider.when('/list', {
             templateUrl : 'partials/list.html',
-        }).when('/room/:number/', {
+        }).when('/details/:number/', {
             templateUrl : 'partials/details.html'
-        }).when('/room/:number/map', {
+        }).when('/details/:number/map', {
             templateUrl : 'partials/room-map.html'
         }).when('/map', {
             templateUrl : 'partials/map.html'
