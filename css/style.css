@@ -34,31 +34,32 @@ img{
         height: auto;
     }
 
-    .navelem hr {
-        margin: 0px;
-        height: 0.5em;
-    }
-
-    #line_elenco {
+    .navelenco:hover {
         background-color: #01A0E3;
     }
-    #line_mappa {
+
+      .navmappa:hover {
         background-color: #E71E25;
     }
-    #line_cerca {
+
+      .navcerca:hover {
         background-color: #069B4B;
     }
-    #line_orari {
+
+      .navorari:hover {
         background-color: #FBCA01;
     }
 
+
+
+
+
+
+
+
+
 }
 
-@media screen and (max-width: 768px) {
-    .navelem hr {
-       display: none;
-    }
-}
 
 /*
 tr:first-child{
