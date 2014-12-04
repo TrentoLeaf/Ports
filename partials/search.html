@@ -1,1 +1,76 @@
-<p>Search</p>
+<!--Inizio tabella orari-->
+<div class="panel panel-default row">
+    <!-- Default panel contents -->
+    <div class="col-md-4">
+        <div class="panel-heading text-center"><h2>Filtri</h2></div>
+        <div class="filter-edificio">
+            <label>Edificio</label>
+            <div>
+                <button type="button" class="btn btndefault">Povo 0</button>
+                <button type="button" class="btn btndefault">Povo 1</button>
+                <button type="button" class="btn btndefault">Povo 2</button>
+            </div>
+            <button type="button" class="btn btndefault">Qualsiasi</button>
+        </div>
+        <div class="filter-piano">
+            <label>Piano</label>
+            <div>
+                <!-- ATTENZIONE: vanno raggruppati e disposti in colonna (in fase di definizione del CSS) -->
+                <button type="button" class="btn btndefault">1° Piano</button>
+                <button type="button" class="btn btndefault">Piano Terra</button>
+                <button type="button" class="btn btndefault">Qualsiasi</button>
+            </div>
+        </div>
+        <div class="filter-aula">
+            <label>Aula</label>
+            <div>
+                <select class="form-control" name="aula">
+                    <option>Qualsiasi</option>
+                    <option>foo</option>
+                    <option>bar</option>
+                </select>
+            </div>
+        </div>
+        <div class="filter-giorno">
+            <label>Giorno</label>
+            <div>
+                 <!-- ATTENZIONE: vanno raggruppati e disposti in colonna (in fase di definizione del CSS) -->
+                <button type="button" class="btn btndefault">Lunedì</button>
+                <button type="button" class="btn btndefault">Martedì</button>
+                <button type="button" class="btn btndefault">Mercoledì</button>
+                <button type="button" class="btn btndefault">Giovedì</button>
+                <button type="button" class="btn btndefault">Venerdì</button>
+                <button type="button" class="btn btndefault">Sabato</button>
+            </div>
+        </div>
+
+
+    </div>
+    <div class="col-md-8">
+        <div class="panel-heading text-center"><h2>Risultati</h2></div>
+        <!-- Tabella -->
+        <table class="table table-striped">
+            <col width="130">
+            <tr>
+                <th class="text-center"><h4>ArCoBalEnO</h4></th>
+                <th class="text-center"><h4>AULA</h4></th>
+                <th class="text-center"><h4>DISPONIBILITÀ</h4></th>
+            </tr>
+            <tr>
+                <td class="text-center">giallo</td>
+                <td class="text-center"><a href="#/details/A101">A101</a></td>
+                <td class="text-center">per 8 ore</td>
+            </tr>
+            <tr>
+                <td class="text-center">verde</td>
+                <td class="text-center"><a href="#/details/A101">A101</a></td>
+                <td class="text-center">per 8 ore</td>
+            </tr>
+            <tr>
+                <td class="text-center">blu</td>
+                <td class="text-center"><a href="#/details/A101">A101</a></td>
+                <td class="text-center">per 8 ore</td>
+            </tr>
+        </table>
+    </div>
+</div>
