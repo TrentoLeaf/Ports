@@ -1,20 +1,19 @@
-img{
-	width: 90px;
-	height : 90px;
-}
-
 .brandtxt {
     display: none;
 }
 
 .logo {
-    width: 30px;
-    height: 30px;
+    width: 60px;
+    height: 60px;
 }
 
-.navbar_icon {
-    width : 50px;
-    height : 50px;
+@media screen and (max-width: 768px) {
+
+    .logo {
+        width: 30px;
+        height: 30px;
+    }
+
 }
 
 .nav > li > a {
@@ -22,48 +21,35 @@ img{
     padding-bottom: 2px;
 }
 
-@media screen and (min-width: 768px) {
-
-    .logo {
-        width: 60px;
-        height: 60px;
-    }
-
-    .navelem {
-        width: 150px;
-        height: auto;
-    }
-
-    .navelenco:hover {
-        background-color: #01A0E3;
-    }
-
-      .navmappa:hover {
-        background-color: #E71E25;
-    }
-
-      .navcerca:hover {
-        background-color: #069B4B;
-    }
-
-      .navorari:hover {
-        background-color: #FBCA01;
-    }
-
-
-
-
-
-
-
-
-
+.navelem {
+    width: 150px;
+    height: auto;
 }
 
+.navbar_icon {
+    width : 50px;
+    height : 50px;
+}
+
+.navelenco:hover {
+    background-color: #01A0E3;
+}
+
+.navmappa:hover {
+    background-color: #E71E25;
+}
+
+.navcerca:hover {
+    background-color: #069B4B;
+}
+
+.navorari:hover {
+    background-color: #FBCA01;
+}
 
 /*
 tr:first-child{
-	background: #FFF;
-	color:white;
+background: #FFF;
+color:white;
 }
 */

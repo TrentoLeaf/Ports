@@ -1,96 +1,62 @@
 $(document).ready(function(){
 
-    // visualizzazione titolo 'PORTS' completo
-    var mq= window.matchMedia("(min-width: 945px)");
+    /* visualizzazione titolo 'PORTS' completo */
+    $(".brandtitle").hover(function(){
 
-    mq.addListener(function(changed) {
-        if(changed.matches) {
-            $(".brandtitle").hover(function(){
-
-                $(".brandtxt").show(500);
-            },
-                                   function(){
-                $(".brandtxt").hide(2000);
-            });
-        } else {
-            $(".brandtitle").hover(function(){
-            });
-        }
-    });
-    //END visualizzazione titolo 'PORTS' completo
-
-
-    //cambio icone navbar (hover)
-
-      $(".navelenco").hover(function() {
-        $(".navelenco").find("div").css("color","white");
-        var dir=$(".navelenco").find("img").attr("src");
-          console.log(dir);
-        var newdir = dir.replace("default", "mono_white");
-        console.log(newdir);
-        $(".navelenco").find("img").attr("src",newdir);
+        $(".brandtxt").show(400);
     },
-                         function() {
-           $(".navelenco").find("div").css("color","black");
-         var dir=$(".navelenco").find("img").attr("src");
-          console.log(dir);
-        var newdir = dir.replace("mono_white", "default");
-        console.log(newdir);
-        $(".navelenco").find("img").attr("src",newdir);
+                           function(){
+        $(".brandtxt").hide(1000);
+    });
+    /* END visualizzazione titolo 'PORTS' completo END */
+
+    /* Hover icone navbar */
+    var changeColor = function(element, color) {
+        $(element).find("div").css("color",color); //cambio colore testo
+    };
+
+    var changeIcon = function (element, from, to) { //from, to: nome della parte di directory da cambiare
+        var dir=$(element).find("img").attr("src");
+        var newdir = dir.replace(from, to);
+        $(element).find("img").attr("src",newdir);
+    };
+
+    $(".navelenco").hover(function() {
+        changeColor(".navelenco", "white"); //cambio colore testo
+        changeIcon(".navelenco", "default", "mono_white");
+    },
+                          function() {
+        changeColor(".navelenco", "black"); //cambio colore testo
+        changeIcon(".navelenco", "mono_white", "default");
     });
 
     $(".navmappa").hover(function() {
-        $(".navmappa").find("div").css("color","white");
-        var dir=$(".navmappa").find("img").attr("src");
-          console.log(dir);
-        var newdir = dir.replace("default", "mono_white");
-        console.log(newdir);
-        $(".navmappa").find("img").attr("src",newdir);
+        changeColor(".navmappa", "white"); //cambio colore testo
+        changeIcon(".navmappa", "default", "mono_white");
     },
                          function() {
-           $(".navmappa").find("div").css("color","black");
-         var dir=$(".navmappa").find("img").attr("src");
-          console.log(dir);
-        var newdir = dir.replace("mono_white", "default");
-        console.log(newdir);
-        $(".navmappa").find("img").attr("src",newdir);
+        changeColor(".navmappa", "black"); //cambio colore testo
+        changeIcon(".navmappa", "mono_white", "default");
     });
 
-     $(".navcerca").hover(function() {
-        $(".navcerca").find("div").css("color","white");
-        var dir=$(".navcerca").find("img").attr("src");
-          console.log(dir);
-        var newdir = dir.replace("default", "mono_white");
-        console.log(newdir);
-        $(".navcerca").find("img").attr("src",newdir);
+    $(".navcerca").hover(function() {
+        changeColor(".navcerca", "white"); //cambio colore testo
+        changeIcon(".navcerca", "default", "mono_white");
     },
                          function() {
-           $(".navcerca").find("div").css("color","black");
-         var dir=$(".navcerca").find("img").attr("src");
-          console.log(dir);
-        var newdir = dir.replace("mono_white", "default");
-        console.log(newdir);
-        $(".navcerca").find("img").attr("src",newdir);
+        changeColor(".navcerca", "black"); //cambio colore testo
+        changeIcon(".navcerca", "mono_white", "default");
     });
 
     $(".navorari").hover(function() {
-        $(".navorari").find("div").css("color","white");
-        var dir=$(".navorari").find("img").attr("src");
-          console.log(dir);
-        var newdir = dir.replace("default", "mono_white");
-        console.log(newdir);
-        $(".navorari").find("img").attr("src",newdir);
+        changeColor(".navorari", "white"); //cambio colore testo
+        changeIcon(".navorari", "default", "mono_white");
     },
                          function() {
-           $(".navorari").find("div").css("color","black");
-         var dir=$(".navorari").find("img").attr("src");
-          console.log(dir);
-        var newdir = dir.replace("mono_white", "default");
-        console.log(newdir);
-        $(".navorari").find("img").attr("src",newdir);
+        changeColor(".navorari", "black"); //cambio colore testo
+        changeIcon(".navorari", "mono_white", "default");
     });
-
-    //END cambio icone navbar (hover)
+    /* END Hover icone navbar END*/
 
 });
 
