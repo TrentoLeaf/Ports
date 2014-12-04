@@ -5,6 +5,7 @@
         <h2>Disponibili Ora</h2>
     </div>
 
+    <p>loading = {{loading}} - error = {{error}}</p>
     <p>predicate = {{predicate}} - reverse = {{reverse}}</p>
 
     <p ng-show="loading">Loading...</p>
@@ -13,20 +14,19 @@
     <table ng-hide="loading" class="table table-striped">
         <col width="130">
         <tr>
-            <th class="text-center"><h4>ArCoBalEnO</h4></th>
-            <th class="text-center"><a href="" ng-click="predicate = 'room'; reverse=!reverse"><h4>AULA</h4></a></th>
-            <th class="text-center"><a href="" ng-click="predicate = 'building'; reverse=!reverse"><h4>EDIFICIO</h4></a></th>
-            <th class="text-center"><a href="" ng-click="predicate = 'floor'; reverse=!reverse"><h4>PIANO</h4></a></th>
-            <th class="text-center"><a href="" ng-click="predicate = 'availability'; reverse=!reverse"><h4>DISPONIBILITÀ</h4></a></th>
+            <th class="text-center"></th>
+            <th class="text-center"><a href="" ng-click="order = 'room'; reverse=!reverse"><h4>AULA</h4></a></th>
+            <th class="text-center"><a href="" ng-click="order = 'building'; reverse=!reverse"><h4>EDIFICIO</h4></a></th>
+            <th class="text-center"><a href="" ng-click="order = 'floor'; reverse=!reverse"><h4>PIANO</h4></a></th>
+            <th class="text-center"><a href="" ng-click="order = 'availability'; reverse=!reverse"><h4>DISPONIBILITÀ</h4></a></th>
         </tr>
 
-        <!-- TODO: filtro... -->
-        <tr ng-repeat="room in rooms | orderBy:order:reverse">
-            <th class="text-center"><h4>???</h4></th>
+        <tr ng-repeat="room in rooms | orderBy:order:reverse | filter: isFree">
+            <th class="text-center {{room.class}}"></th>
             <th class="text-center"><h4><a href="#/details/{{room.room}}">{{room.room}}</a></h4></th>
             <th class="text-center"><h4>{{room.building}}</h4></th>
             <th class="text-center"><h4>{{room.floor}}</h4></th>
-            <th class="text-center"><h4>{{room.availability}}</h4></th>
+            <th class="text-center"><h4>{{room.availability}} ore</h4></th>
         </tr>
     </table>
 
