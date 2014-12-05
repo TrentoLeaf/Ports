@@ -31,6 +31,7 @@
     height : 50px;
 }
 
+<<<<<<< HEAD
 .navelenco:hover {
     background-color: #01A0E3;
 }
@@ -45,7 +46,34 @@
 
 .navorari:hover {
     background-color: #FBCA01;
+=======
+    .navelenco:hover {
+        background-color: #01A0E3;
+    }
+
+      .navmappa:hover {
+        background-color: #E71E25;
+    }
+
+      .navcerca:hover {
+        background-color: #069B4B;
+    }
+
+      .navorari:hover {
+        background-color: #FBCA01;
+    }
+
+
+
+
+
+
+
+
+
+>>>>>>> origin/stefano
 }
+
 
 /*
 tr:first-child{
