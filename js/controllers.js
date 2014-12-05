@@ -4,7 +4,6 @@ String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
 (function() {
     var listModule = angular.module('listModule', []);
 
-<<<<<<< HEAD
     var raw_now;
     var raw_1hour;
     var raw_2hour;
@@ -91,44 +90,19 @@ String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
         var _3hours = now + 3*hour;
         var _4hours = now + 4*hour;
         var _5hours = now + 5*hour;
-=======
-    listModule.controller('ListController', ['$scope', '$log', '$http', function($scope, $log, $http) {
-
-        // TODO: togliere qualche secondo dalle ore...
-        var now = new Date();
-        var _1hours = new Date();
-        _1hours.setHours(now.getHours() + 1);
-        var _2hours = new Date();
-        _2hours.setHours(now.getHours() + 2);
-        var _3hours = new Date();
-        _3hours.setHours(now.getHours() + 3);
-        var _4hours = new Date();
-        _4hours.setHours(now.getHours() + 4);
-        var _5hours = new Date();
-        _5hours.setHours(now.getHours() + 5);
->>>>>>> origin/stefano
 
         var baseUrl = 'http://studyspaces-unitn.tk/api/roomStatus.json?timestamp=';
         var callback = '&callback=JSON_CALLBACK';
 
-<<<<<<< HEAD
         $scope.order = 'availability';
         $scope.reverse = true;
         $scope.rooms = [];
 
         $scope.error = false;
-=======
-        $scope.order = 'room';
-        $scope.reverse = false;
-        $scope.rooms = [];
-
-        // TODO: handle errors
->>>>>>> origin/stefano
         $scope.loading = true;
 
         $log.debug("start");
 
-<<<<<<< HEAD
         $http.jsonp(baseUrl + now + callback).success(function(data) {
             raw_now = data['statuses'];
             $log.debug("raw_now");
@@ -204,40 +178,6 @@ String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
         //                raw_now[i].availability = 1;
         //            }
         //        }
-=======
-        $http.jsonp(baseUrl + now.getSeconds().toString() + callback).success(function(data_now) {
-            var raw_now = data_now['statuses'];
-
-            $log.debug("1 call (now)");
-
-            angular.forEach(raw_now, function(value) {
-                value.freeNow = value.state;
-
-                // TODO: validate data
-                var n = value.room.slice(1);
-                value.building = "Povo " + (value.room.contains('A') ? "1" : "2");
-                value.floor = (n < 200 ? -1 : 0);
-                value.availability = 0;
-            });
-
-            $http.jsonp(baseUrl + _1hours.getSeconds().toString() + callback).success(function(data_1hour) {
-                var raw_1hour = data_1hour['statuses'];
-
-                $log.debug("2 call (1 hour)");
-
-                for(var i = 0; i < raw_now.length; i++) {
-                    if(raw_now[i].status == 'free' && raw_now[i].status == 'free') {
-                        raw_now[i].availability = 1;
-                    }
-                }
-
-                $scope.rooms = raw_now;
-                $scope.loading = false;
-
-                $log.debug("end");
-            });
-        });
->>>>>>> origin/stefano
     }]);
 
 })();
