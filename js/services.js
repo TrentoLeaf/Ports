@@ -12,7 +12,7 @@ String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
             var now = (new Date()).getTime();
 
             var baseUrl = 'http://studyspaces-unitn.tk/api/roomStatus.json?timestamp=', callback = '&callback=JSON_CALLBACK',
-                requests = [], nRequests = 6,
+                requests = [], nRequests = 8,
                 data = [];
 
             // wrap result
@@ -77,9 +77,12 @@ String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
                         case 6:
                             data[i].class = 'green';
                             break;
+
+                        default:
+                            data[i].class = 'green';
                     }
 
-                    data[i].free = (data[i].availability == results.length);
+                    data[i].free = (data[i].availability == nRequests);
                 }
 
                 $log.debug(data);
