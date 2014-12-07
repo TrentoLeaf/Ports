@@ -6,13 +6,15 @@
     </div>
 
     <div>
+        <p>date = {{date | date: 'EEEE - dd-MM-yyyy - HH:mm'}}</p>
+        <p>changed = {{changed}}</p>
         <p>loading = {{loading}}</p>
         <p>error = {{error}}</p>
         <p>order = {{order}}</p>
         <p>reverse = {{reverse}}</p>
     </div>
 
-    <p ng-show="loading">Loading...</p>
+    <!-- <p ng-show="loading">Loading...</p>-->
 
     <!-- Tabella -->
     <table ng-hide="loading" class="table table-striped">

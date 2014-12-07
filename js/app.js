@@ -45,8 +45,15 @@
                 // array containing rooms data
                 $scope.rooms = [];
 
+                // calculate date
+                var now = new Date();
+                // DateUtilities.addDay(now, 3);
+                DateUtilities.roundToFollowingHalfHour(now);
+                $scope.changed = DateUtilities.nextOpenTime(now);
+                $scope.date = now;
+
                 // retrieve data...
-                var promise = DataService.retrieve();
+                var promise = DataService.retrieve(now);
                 promise.then(function(data) {
                     $scope.rooms = data;
                 }, function(error) {
