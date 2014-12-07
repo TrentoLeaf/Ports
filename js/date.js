@@ -22,6 +22,11 @@ DateUtilities = {
     nextOpenTime: function(date) {
         var changed = false;
 
+        if(date.getHours() < 8) {
+            date.setHours(8);
+            changed = true;
+        }
+
         if(date.getHours() >= 20) {
             date.setHours(8 + 24);
             changed = true;
