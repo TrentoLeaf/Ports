@@ -39,7 +39,7 @@ describe("Date Utilities", function() {
                 var currentDate = new Date(date);
                 currentDate.setMinutes(date.getMinutes() + i);
                 DateUtilities.roundToFollowingHalfHour(currentDate);
-                expect(currentDate.getHours()).toBe(hoursBefore + 1);
+                expect(currentDate.getHours()).toBe((hoursBefore + 1) % 24);
             }
         });
 
