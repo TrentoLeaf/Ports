@@ -5,8 +5,12 @@
         <h2>Disponibili Ora</h2>
     </div>
 
-    <p>loading = {{loading}} - error = {{error}}</p>
-    <p>predicate = {{predicate}} - reverse = {{reverse}}</p>
+    <div>
+        <p>loading = {{loading}}</p>
+        <p>error = {{error}}</p>
+        <p>order = {{order}}</p>
+        <p>reverse = {{reverse}}</p>
+    </div>
 
     <p ng-show="loading">Loading...</p>
 
@@ -24,11 +28,10 @@
         <tr ng-repeat="room in rooms | orderBy:order:reverse | filter: isFree">
             <th class="text-center {{room.class}}"></th>
             <th class="text-center"><h4><a href="#/details/{{room.room}}">{{room.room}}</a></h4></th>
-            <th class="text-center"><h4>{{room.building}}</h4></th>
+            <th class="text-center"><h4>Povo {{room.building}}</h4></th>
             <th class="text-center"><h4>{{room.floor}}</h4></th>
-            <th class="text-center"><h4>{{room.availability}} ore</h4></th>
+            <th class="text-center"><h4>{{room.free ? '>' : ''}} {{room.availability}} ore</h4></th>
         </tr>
     </table>
 
-</div>
 </div>
