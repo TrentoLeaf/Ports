@@ -32,4 +32,29 @@
             templateUrl : 'partials/results.html'
         });
     } ]);
+
+    app.directive('load', function() {
+        return {
+            restrict: 'E',
+            controller: function($scope, DataService) {
+
+                // parameters to load correctly data
+                $scope.loading = true;
+                $scope.error = false;
+
+                // array containing rooms data
+                $scope.rooms = [];
+
+                // retrieve data...
+                var promise = DataService.retrieve();
+                promise.then(function(data) {
+                    $scope.rooms = data;
+                }, function(error) {
+                    $scope.error = true;
+                }).finally(function() {
+                    $scope.loading = false;
+                });
+            }
+        };
+    });
 })();

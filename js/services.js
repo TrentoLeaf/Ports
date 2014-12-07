@@ -7,8 +7,9 @@ String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
     serviceModule.service('DataService', ['$q', '$http', '$log', function($q, $http, $log) {
 
         /* @now in secondi! */
-        this.retrieve = function(now) {
+        this.retrieve = function() {
             // TODO: arrotondare alle ore?
+            var now = (new Date()).getTime();
 
             var baseUrl = 'http://studyspaces-unitn.tk/api/roomStatus.json?timestamp=', callback = '&callback=JSON_CALLBACK',
                 requests = [], nRequests = 6,
