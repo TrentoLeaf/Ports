@@ -1,7 +1,7 @@
 'use strict';
 
 (function() {
-    var app = angular.module('ports', [ 'ngRoute', 'listModule', 'searchModule', 'detailsModule' ]);
+    var app = angular.module('ports', [ 'listModule', 'searchModule', 'detailsModule', 'ngRoute']);
 
     app.config([ '$routeProvider', function($routeProvider) {
         $routeProvider.when('/list', {
@@ -16,7 +16,7 @@
         }).when('/map', {
             templateUrl : 'partials/preselect-map.html'
         }).when('/map-res', {
-          templateUrl : 'partials/map.html'
+            templateUrl : 'partials/map.html'
         }).when('/search', {
             templateUrl : 'partials/search.html'
         }).when('/search/:building/:level/:room/:day', {
@@ -28,7 +28,7 @@
             templateUrl : 'partials/about.html'
         }).otherwise({
             redirectTo : '/list'
-         }).when('/results', {
+        }).when('/results', {
             templateUrl : 'partials/results.html'
         });
     } ]);
