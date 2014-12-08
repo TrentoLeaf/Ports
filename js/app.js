@@ -46,7 +46,8 @@
 
                 // calculate date
                 var now = new Date();
-                // DateUtilities.addDay(now, 3);
+                // DateUtilities.addDay(now, 2);
+                // now.setHours(8);
                 DateUtilities.roundToFollowingHalfHour(now);
                 $scope.changed = DateUtilities.nextOpenTime(now);
                 $scope.date = now;

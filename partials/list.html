@@ -1,11 +1,11 @@
 <!--Inizio tabella orari-->
-<div class="panel panel-default">
+<div class="rooms_panel">
     <!-- Default panel contents -->
-    <div class="panel-heading text-center">
+    <div class="panel-heading">
         <h2>Disponibili Ora</h2>
     </div>
 
-    <div>
+    <div class="hide">
         <p>date = {{date | date: 'EEEE - dd-MM-yyyy - HH:mm'}}</p>
         <p>changed = {{changed}}</p>
         <p>loading = {{loading}}</p>
@@ -17,26 +17,25 @@
     <!-- <p ng-show="loading">Loading...</p>-->
 
     <!-- Tabella -->
-    <table ng-hide="loading" class="table table-striped">
-        <col width="130">
+    <table ng-hide="loading" class="rooms_table">
         <thead>
             <tr>
-                <th class="text-center"></th>
-                <th class="text-center"><a href="" ng-click="order = 'room'; reverse=!reverse"><h4>AULA</h4></a></th>
-                <th class="text-center"><a href="" ng-click="order = 'building'; reverse=!reverse"><h4>EDIFICIO</h4></a></th>
-                <th class="text-center"><a href="" ng-click="order = 'floor'; reverse=!reverse"><h4>PIANO</h4></a></th>
-                <th class="text-center"><a href="" ng-click="order = 'availability'; reverse=!reverse"><h4>DISPONIBILITÀ</h4></a></th>
+                <th></th>
+                <th><a href="" ng-click="order = 'room'; reverse=!reverse"><h4>AULA</h4></a></th>
+                <th><a href="" ng-click="order = 'building'; reverse=!reverse"><h4>EDIFICIO</h4></a></th>
+                <th><a href="" ng-click="order = 'floor'; reverse=!reverse"><h4>PIANO</h4></a></th>
+                <th><a href="" ng-click="order = 'availability'; reverse=!reverse"><h4>DISPONIBILITÀ</h4></a></th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="room in rooms | orderBy:order:reverse | filter: isFree">
-                <td class="text-center {{room.class}}"></td>
-                <td class="text-center"><h4><a href="#/details/{{room.room}}">{{room.room}}</a></h4></td>
-                <td class="text-center"><h4>Povo {{room.building}}</h4></td>
-                <td class="text-center"><h4>{{room.floor}}</h4></td>
-                <td class="text-center"><h4>{{room.free ? '>' : ''}} {{room.availability}} ore</h4></td>
+                <td class="{{room.class}}"></td>
+                <td><h4><a href="#/details/{{room.room}}">{{room.room}}</a></h4></td>
+                <td><h4>Povo {{room.building}}</h4></td>
+                <td><h4>{{room.floor}}</h4></td>
+                <td><h4>{{room.free ? '>' : ''}} {{room.availability}} ore</h4></td>
             </tr>
         </tbody>
     </table>
-
+    
 </div>
