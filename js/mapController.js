@@ -3,7 +3,7 @@
 var colGreen = "#66BB6A";
 var colYellow = "#FFEE58";
 var colRed = "#EF5350";
-
+var lastFill=null;
 
 (function() {
     var mapModule = angular.module('mapModule', []);
@@ -41,23 +41,19 @@ var colRed = "#EF5350";
                     $(idLabelSvg).css('fill', "#lalala");
                 }
 
-               /* var lastRectWidth= $(idClassNameSvg).attr("width");
-                var lastRectHeight= $(idClassNameSvg).attr("height");
-               var lastRectPosX= $(idClassNameSvg).attr("x");
-                var lastRectPosY= $(idClassNameSvg).attr("y");
-               console.log(lastRectPosX);
-                */
-
-               /* $(idClassNameSvg).mouseover(function() {
-                      $(this).attr("x", lastRectPosX-"1");
-                     $(this).attr("y", lastRectPosY-"1");
-                  $(this).attr("width", lastRectWidth+"20");
-                     $(this).attr("height", lastRectHeight+"20");
-
+                $(idClassNameSvg).mouseover(function() {
+                    lastFill=  $(this).css('fill');
+                    $(this).css('fill', "#0050FF");
                 });
+
                 $(idClassNameSvg).mouseleave(function() {
-                    $(this).css('fill', "green");
-                });*/
+                    $(this).css('fill', lastFill);
+                    lastFill= null;
+                });
+
+                $(idClassNameSvg).click(function() {
+                 //link ai dettagli di un aula
+                });
 
             }
         };
