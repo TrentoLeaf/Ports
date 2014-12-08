@@ -1,0 +1,13 @@
+.panelmap {
+    box-sizing: border-box;
+    width: 45%;
+    display: inline-block;
+}
+
+.panelinline {
+    display: block;
+}
+
+.panel object {
+    width: 70%;
+}

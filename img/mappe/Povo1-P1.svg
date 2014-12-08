@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
-<svg
+<svg class="mysvg"
    xmlns:dc="http://purl.org/dc/elements/1.1/"
    xmlns:cc="http://creativecommons.org/ns#"
    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -1350,4 +1350,13 @@
      y="1613.4006"
      style="font-size:451.55557251px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;line-height:100%;text-anchor:middle;font-family:Lato;-inkscape-font-specification:Lato Bold"
      id="tspan3443">Meccanica</tspan></text>
+
+<style type="text/css"><![CDATA[
+	@import url(http://fonts.googleapis.com/css?family=Lato:400,900);
+
+	text {
+		font-family: 'Lato', sans-serif;
+	}
+]]></style>
 </svg>
+
