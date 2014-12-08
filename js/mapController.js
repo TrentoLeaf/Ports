@@ -15,7 +15,7 @@ var colRed = "#EF5350";
             // TODO: codide jQuery qua!
 
             for(var i = 0, len = array.length; i < len; i++) {
-                $log.debug(array[i]);
+
                 var className=array[i].room;
                 var idClassNameSvg = "#"+className.toLowerCase();
                 var status=null;
@@ -30,25 +30,18 @@ var colRed = "#EF5350";
                     status=colRed;
                 }
 
-                 $(idClassNameSvg).css('fill', status);
+                $(idClassNameSvg).css('fill', status);
 
                 if (status==colGreen) {
                     var idLabelSvg= idClassNameSvg+"t";
-                         $(idLabelSvg).css('fill', "white");
+                    $(idLabelSvg).css('fill', "white");
                 }
                 else {
-                     var idLabelSvg= idClassNameSvg+"t";
-                         $(idLabelSvg).css('fill', "#lalala");
+                    var idLabelSvg= idClassNameSvg+"t";
+                    $(idLabelSvg).css('fill', "#lalala");
                 }
             }
-
-             for(var i = 0, len = array.length; i < len; i++) {
-             console.log(array[i].room);
-             }
-
-
-
-         };
+        };
 
 
 
