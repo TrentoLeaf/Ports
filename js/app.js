@@ -1,7 +1,7 @@
 'use strict';
 
 (function() {
-    var app = angular.module('ports', [ 'listModule', 'searchModule', 'detailsModule', 'ngRoute']);
+    var app = angular.module('ports', [ 'listModule', 'mapModule', 'searchModule', 'detailsModule', 'ngRoute']);
 
     app.config([ '$routeProvider', function($routeProvider) {
         $routeProvider.when('/list', {
@@ -14,9 +14,8 @@
             templateUrl : 'partials/room-map.html',
             controller: 'DetailsController'
         }).when('/map', {
-            templateUrl : 'partials/preselect-map.html'
-        }).when('/map-res', {
-            templateUrl : 'partials/map.html'
+            templateUrl : 'partials/map.html',
+            controller: 'MapController'
         }).when('/search', {
             templateUrl : 'partials/search.html'
         }).when('/search/:building/:level/:room/:day', {
