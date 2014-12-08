@@ -32,7 +32,7 @@ var colRed = "#EF5350";
 
                 $(idClassNameSvg).css('fill', status);
 
-                if (status==colGreen) {
+                if (status==colGreen || status==colRed) {
                     var idLabelSvg= idClassNameSvg+"t";
                     $(idLabelSvg).css('fill', "white");
                 }
@@ -40,6 +40,25 @@ var colRed = "#EF5350";
                     var idLabelSvg= idClassNameSvg+"t";
                     $(idLabelSvg).css('fill', "#lalala");
                 }
+
+               /* var lastRectWidth= $(idClassNameSvg).attr("width");
+                var lastRectHeight= $(idClassNameSvg).attr("height");
+               var lastRectPosX= $(idClassNameSvg).attr("x");
+                var lastRectPosY= $(idClassNameSvg).attr("y");
+               console.log(lastRectPosX);
+                */
+
+               /* $(idClassNameSvg).mouseover(function() {
+                      $(this).attr("x", lastRectPosX-"1");
+                     $(this).attr("y", lastRectPosY-"1");
+                  $(this).attr("width", lastRectWidth+"20");
+                     $(this).attr("height", lastRectHeight+"20");
+
+                });
+                $(idClassNameSvg).mouseleave(function() {
+                    $(this).css('fill', "green");
+                });*/
+
             }
         };
 
