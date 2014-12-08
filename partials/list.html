@@ -1,7 +1,7 @@
 <!--Inizio tabella orari-->
-<div class="panel panel-default">
+<div class="rooms_panel">
     <!-- Default panel contents -->
-    <div class="panel-heading text-center">
+    <div class="panel-heading">
         <h2>Disponibili Ora</h2>
     </div>
 
@@ -10,7 +10,7 @@
     <p ng-show="loading">Loading...</p>
 
     <!-- Tabella -->
-    <table ng-hide="loading" class="table table-striped">
+    <table ng-hide="loading" class="rooms_table">
         <col width="130">
         <tr>
             <th class="text-center"><h4>ArCoBalEnO</h4></th>
@@ -22,13 +22,12 @@
 
         <!-- TODO: filtro... -->
         <tr ng-repeat="room in rooms | orderBy:order:reverse">
-            <th class="text-center"><h4>???</h4></th>
-            <th class="text-center"><h4><a href="#/details/{{room.room}}">{{room.room}}</a></h4></th>
-            <th class="text-center"><h4>{{room.building}}</h4></th>
-            <th class="text-center"><h4>{{room.floor}}</h4></th>
-            <th class="text-center"><h4>{{room.availability}}</h4></th>
+            <td class="text-center"><h4>???</h4></td>
+            <td class="text-center"><h4><a href="#/details/{{room.room}}">{{room.room}}</a></h4></td>
+            <td class="text-center"><h4>{{room.building}}</h4></td>
+            <td class="text-center"><h4>{{room.floor}}</h4></td>
+            <td class="text-center"><h4>{{room.availability}}</h4></td>
         </tr>
     </table>
 
-</div>
 </div>
