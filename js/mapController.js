@@ -3,6 +3,7 @@
 var colGreen = "#66BB6A";
 var colYellow = "#FFCA28";
 var colRed = "#EF5350";
+var colBlue = "#42A5F5";
 var lastFill=null;
 
 (function() {
@@ -43,7 +44,7 @@ var lastFill=null;
 
                 $(idClassNameSvg).mouseover(function() {
                     lastFill=  $(this).css('fill');
-                    $(this).css('fill', "#0050FF");
+                    $(this).css('fill', colBlue);
                 });
 
                 $(idClassNameSvg).mouseleave(function() {
