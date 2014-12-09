@@ -20,20 +20,20 @@
     <table ng-hide="loading" class="rooms_table">
         <thead>
             <tr>
-                <th></th>
-                <th><a href="" ng-click="order = 'room'; reverse=!reverse"><h4>AULA</h4></a></th>
-                <th><a href="" ng-click="order = 'building'; reverse=!reverse"><h4>EDIFICIO</h4></a></th>
-                <th><a href="" ng-click="order = 'floor'; reverse=!reverse"><h4>PIANO</h4></a></th>
-                <th><a href="" ng-click="order = 'availability'; reverse=!reverse"><h4>DISPONIBILITÀ</h4></a></th>
+<!--                <th class="first_colon table_first_element"></th>-->
+                <th><h4><a href="" ng-click="order = 'room'; reverse=!reverse">AULA</a></h4></th>
+                <th><h4><a href="" ng-click="order = 'building'; reverse=!reverse">EDIFICIO</a></h4></th>
+                <th><h4><a href="" ng-click="order = 'floor'; reverse=!reverse">PIANO</a></h4></th>
+                <th><h4><a href="" ng-click="order = 'availability'; reverse=!reverse">DISPONIBILITÀ</a></h4></th>
             </tr>
         </thead>
         <tbody>
             <tr ng-repeat="room in rooms | orderBy:order:reverse | filter: isFree">
-                <td class="{{room.class}}"></td>
-                <td><h4><a href="#/details/{{room.room}}">{{room.room}}</a></h4></td>
-                <td><h4>Povo {{room.building}}</h4></td>
-                <td><h4>{{room.floor}}</h4></td>
-                <td><h4>{{room.free ? '>' : ''}} {{room.availability}} ore</h4></td>
+<!--                <td class="{{room.class}} first_colon"></td>-->
+                <td class="{{room.class}}"><h4><a href="#/details/{{room.room}}">{{room.room}}</a></h4></td>
+                <td class="{{room.class}}"><h4>Povo {{room.building}}</h4></td>
+                <td class="{{room.class}}"><h4>{{room.floor}}</h4></td>
+                <td class="{{room.class}}"><h4>{{room.free ? '>' : ''}} {{room.availability}} ore</h4></td>
             </tr>
         </tbody>
     </table>

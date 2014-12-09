@@ -1,30 +1,36 @@
 <!--Inizio tabella orari-->
 <div class="search_panel">
     <!-- Default panel contents -->
-    <div class="col-md-4">
-        <div class="panel-heading"><h2>Filtri</h2></div>
+    <div class="filtri">
+        <div class=""><h2>Filtri</h2></div>
+        <div class="filters_container">
         <div class="edificio">
-            <label>Edificio</label>
-            <div>
-                <button type="button" class="btn btndefault">Povo 0</button>
-                <button type="button" class="btn btndefault">Povo 1</button>
-                <button type="button" class="btn btndefault">Povo 2</button>
+            <h3>Edificio</h3>
+            <div class="btn_edif">
+            <div class="btn_edif_12">
+                <button type="button" class="">Povo 1</button>
+                <button type="button" class="">Povo 2</button>
             </div>
-            <button type="button" class="btn btndefault">Qualsiasi</button>
+            <div>
+            <button type="button" class="">Qualsiasi</button>
+            </div>
+            </div>
         </div>
         <div class="piano">
-            <label>Piano</label>
-            <div>
+            <h3>Piano</h3>
+            <div class="btn_piano">
                 <!-- ATTENZIONE: vanno raggruppati e disposti in colonna (in fase di definizione del CSS) -->
-                <button type="button" class="btn btndefault">1° Piano</button>
-                <button type="button" class="btn btndefault">Piano Terra</button>
-                <button type="button" class="btn btndefault">Qualsiasi</button>
+                <button type="button" class="btn_piano">1° Piano</button>
+                <button type="button" class="btn_piano">Piano Terra</button>
+                <button type="button" class="btn_piano">Qualsiasi</button>
             </div>
         </div>
+        </div>
+        <div class="filters_container">
         <div class="aula">
-            <label>Aula</label>
+            <h3>Aula</h3>
             <div>
-                <select class="form-control" name="aula">
+                <select class="btn_aula" name="aula">
                     <option>Qualsiasi</option>
                     <option>foo</option>
                     <option>bar</option>
@@ -32,44 +38,44 @@
             </div>
         </div>
         <div class="giorno">
-            <label>Giorno</label>
+            <h3>Giorno</h3>
             <div>
                  <!-- ATTENZIONE: vanno raggruppati e disposti in colonna (in fase di definizione del CSS) -->
-                <button type="button" class="btn btndefault">Lunedì</button>
-                <button type="button" class="btn btndefault">Martedì</button>
-                <button type="button" class="btn btndefault">Mercoledì</button>
-                <button type="button" class="btn btndefault">Giovedì</button>
-                <button type="button" class="btn btndefault">Venerdì</button>
-                <button type="button" class="btn btndefault">Sabato</button>
+                <button type="button" class="btn_giorno">Lunedì</button>
+                <button type="button" class="btn_giorno">Martedì</button>
+                <button type="button" class="btn_giorno">Mercoledì</button>
+                <button type="button" class="btn_giorno">Giovedì</button>
+                <button type="button" class="btn_giorno">Venerdì</button>
+                <button type="button" class="btn_giorno">Sabato</button>
             </div>
+        </div>
         </div>
 
 
     </div>
-    <div class="col-md-8">
-        <div class="panel-heading text-center"><h2>Risultati</h2></div>
+    <div class="risultati">
+        <div class=""><h2>Risultati</h2></div>
         <!-- Tabella -->
-        <table class="table table-striped">
-            <col width="130">
+        <table class="">
             <tr>
-                <th class="text-center"><h4>ArCoBalEnO</h4></th>
-                <th class="text-center"><h4>AULA</h4></th>
-                <th class="text-center"><h4>DISPONIBILITÀ</h4></th>
+                <th class=""><h4>ArCoBalEnO</h4></th>
+                <th class=""><h4>AULA</h4></th>
+                <th class=""><h4>DISPONIBILITÀ</h4></th>
             </tr>
             <tr>
-                <td class="text-center">giallo</td>
-                <td class="text-center"><a href="#/details/A101">A101</a></td>
-                <td class="text-center">per 8 ore</td>
+                <td class="">giallo</td>
+                <td class=""><a href="#/details/A101">A101</a></td>
+                <td class="">per 8 ore</td>
             </tr>
             <tr>
-                <td class="text-center">verde</td>
-                <td class="text-center"><a href="#/details/A101">A101</a></td>
-                <td class="text-center">per 8 ore</td>
+                <td class="">verde</td>
+                <td class=""><a href="#/details/A101">A101</a></td>
+                <td class="">per 8 ore</td>
             </tr>
             <tr>
-                <td class="text-center">blu</td>
-                <td class="text-center"><a href="#/details/A101">A101</a></td>
-                <td class="text-center">per 8 ore</td>
+                <td class="">blu</td>
+                <td class=""><a href="#/details/A101">A101</a></td>
+                <td class="">per 8 ore</td>
             </tr>
         </table>
     </div>

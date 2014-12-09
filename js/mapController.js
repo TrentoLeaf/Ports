@@ -1,7 +1,7 @@
 'use strict';
 
 var colGreen = "#66BB6A";
-var colYellow = "#FFEE58";
+var colYellow = "#FFCA28";
 var colRed = "#EF5350";
 
 
