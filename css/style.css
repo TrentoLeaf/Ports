@@ -1,26 +1,40 @@
+html {
+
+    width: 100%;
+    height: 100%;
+}
+
 body {
 
+    width: 100%;
+    height: auto;
+    min-height: 100%;
     font-family: 'Lato';
     padding: 0;
     border: 0;
     margin: 0;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    
 }
 
 a {
 
     color: white;
     text-decoration: none;
+    font-weight: 400;
 }
 
 /* NAVBAR */
 .navbar {
 
-    position: fixed;
-    top: 0;
+/*    position: fixed;
     z-index: 1;
+    top: 0;*/
     width: 100%;
     height: 5em;
+    min-height: 5em;
     background: white;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
     display: flex;
@@ -92,21 +106,36 @@ a {
     justify-content: center;
 }
 
+.navbar_text {
+
+    display: none;
+}
+
 .elen {
 
-    border-bottom: .4em solid #26C6DA;
+    border-bottom: .4em solid #42A5F5;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.elen:hover {
+
+    background: #42A5F5;
 }
 
 .elen_active {
 
-    background: #26C6DA;
+    background: #42A5F5;
 }
 
 .map {
 
     border-bottom: .4em solid #EF5350;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.map:hover {
+
+    background: #EF5350;
 }
 
 .map_active {
@@ -120,6 +149,11 @@ a {
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
+.search:hover {
+
+    background: #66BB6A;
+}
+
 .search_active {
 
     background: #66BB6A;
@@ -127,25 +161,28 @@ a {
 
 .time {
 
-    border-bottom: .4em solid #FFEE58;
+    border-bottom: .4em solid #FFCA28;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.time:hover {
+
+    background: #FFCA28;
 }
 
 .time_active {
 
-    background: #FFEE58;
+    background: #FFCA28;
 }
 
 
 
 /* CONTENT */
-
 .content {
 
-    height: 100%;
-    width: 100%;
-    margin-top: 5em;
-    margin-bottom: 2.8em;
+    height: auto;
+    /*margin-top: 5em;*/
+    margin-bottom: .5em;
 }
 
 /* DISPONIBILI ORA */
@@ -164,36 +201,45 @@ a {
     text-transform: uppercase;
 }
 
-/*
-.rooms_panel p {
-
-    display: none;
-}
-*/
-
 .rooms_table {
 
-    border-collapse: separate;
-    border-spacing: .2em;
+    border-collapse: collapse;
+    /*border-spacing: .2em;*/
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
 .rooms_table th {
 
     height: 2.5em;
     width: 15em;
-    background: #26C6DA; 
+    background: #42A5F5; 
 }
 
 .rooms_table td {
 
     text-align: center;
-    background: #B2EBF2;
+/*    background: #B2EBF2;*/
+}
+
+.rooms_table tr {
+
+    outline: 2px solid white;
 }
 
 .th_selected {
 
     border-bottom: .2em solid #EEFF41;
 }
+
+/*.first_colon {
+
+    width: 7.5em !important;
+}
+
+.table_first_element {
+
+    visibility: hidden !important;
+}*/
 
 .rooms_table h4 {
 
@@ -205,40 +251,181 @@ a {
 
 .map_panel {
 
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-/* SEARCH*/
+.map_panel h2 {
+    
+    margin: 0;
+    font-size: 3em;
+    font-weight: 300;
+    text-transform: uppercase;
+}
 
-.search_panel {
+.map_panel h3 {
 
+    margin: 0;
+    margin-bottom: 1em;
+    font-size: 1.5em;
+    font-weight: 300;
+} 
+
+.map_container {
+
+    margin-top: 2em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.povo1 {
+    
+    width: 50%;
+    height: 40em;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+}
+
+.povo1_title {
+
+    font-size: 2.5em;
+    font-weight: 300;
+}
+
+.povo1_maps {
+
+    margin-top: 1.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.povo2 {
+
+    width: 50%;
+    height: 40em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.povo2_title {
+
+    font-size: 2.5em;
+    font-weight: 300;
+}
+
+.povo2_maps {
+    
+    margin-top: 1.5em;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.single_map {
+
     text-align: center;
 }
 
-.search_panel button {
+/* SEARCH*/
+.search_panel {
 
-      display: inline-block;
-      position: relative;
-      width: 120px;
-      height: 32px;
-      line-height: 32px;
-      border-radius: 2px;
-      font-size: 0.9em;
-      background-color: #fff;
-      color: #646464;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+    text-align: center;
 }
 
-.button_active {
+.search_panel h2 {
+
+    margin: 0;
+    margin-top: .3em;
+    margin-bottom: 3em;
+    font-size: 3em;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.search_panel h3 {
+
+    margin: 0;
+    margin-bottom: .5em;
+    font-size: 1.5em;
+    font-weight: 300;
+} 
+
+.filtri button {
+    
+    padding: 0;
+    border: 0;
+    width: 7em;
+    height: 2.5em;
+    background: white;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+.btn_aula {
+
+    padding: 0;
+    border: 0;
+    width: 7em;
+    height: 2.5em;
+    background: white;
+    border-radius: 2px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+}
+
+button:after{
 
     background: #66BB6A;
 }
+
+/* TIMETABLE */
+.timetable_panel {
+
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-content: center;
+    text-align: center;
+}
+
+.timetable_panel h2 {
+
+    margin: 0;
+    margin-top: .3em;
+    margin-bottom: 3.5em;
+    font-size: 3em;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+.timetable_panel h3 {
+
+    margin: 0;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 2em;
+    font-weight: 300;
+    text-transform: uppercase;
+} 
+
 
 
 /* FOOTER */
@@ -247,12 +434,13 @@ a {
 
     width: 100%;
     height: 2em;
-    position: fixed;
+    min-height: 2em;
+/*    position: fixed;
+    z-index: 1;
+    bottom: 0;*/
     display: flex;
     flex-direction: column;
     justify-content: center;
-    z-index: 1;
-    bottom: 0;
     background: white;
     box-shadow:  0 -2px 5px 0 rgba(0, 0, 0, 0.26);
 }
@@ -261,10 +449,8 @@ a {
 
     height: 2em;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
-    margin-left: .5em;
-    margin-right: .5em;
 }
 
 .credits_container p {

@@ -1,11 +1,11 @@
 .green {
-    background: #66BB6A !important;
+    background: rgba(102, 187, 106, 1) !important;
 }
 
 .yellow {
-    background: #FFEE58 !important;
+    background: #FFCA28 !important;
 }
 
 .red {
-    background: #EF5350 !important;
+    background: rgba(239,83,80, 1) !important;
 }
