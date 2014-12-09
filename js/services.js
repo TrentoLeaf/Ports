@@ -10,8 +10,6 @@
             var currentDate = new Date(),
                 queryDate = new Date();
 
-            queryDate.setHours(queryDate.getHours() + 5);
-
             DateUtilities.nextOpenDay(queryDate);
             var now = queryDate.getTime() / 1000;
 
