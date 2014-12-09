@@ -44,7 +44,7 @@ DateUtilities = {
     },
     
     nextOpenDay : function(date) {
-        if(date.getHours() > this.CLOSE) {
+        if(date.getHours() >= this.CLOSE) {
             this.addDay(date, 1);
         }
         date.setMilliseconds(0);
