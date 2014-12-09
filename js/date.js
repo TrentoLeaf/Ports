@@ -1,4 +1,7 @@
 DateUtilities = {
+    
+    OPEN: 8,
+    CLOSE: 20,
 
     addDay : function(date, days) {
         date.setHours(date.getHours() + 24*days);
@@ -38,6 +41,16 @@ DateUtilities = {
         }
 
         return changed;
+    },
+    
+    nextOpenDay : function(date) {
+        if(date.getHours() > this.CLOSE) {
+            this.addDay(date, 1);
+        }
+        date.setMilliseconds(0);
+        date.setSeconds(0);
+        date.setMinutes(30);
+        date.setHours(7);
     }
 
 };

@@ -1,6 +1,8 @@
 'use strict';
 
+var colDarkGreen = "#66BB6A"; // TODO!
 var colGreen = "#66BB6A";
+var colOrange = "orange";
 var colYellow = "#FFCA28";
 var colRed = "#EF5350";
 var lastFill=null;
@@ -16,18 +18,40 @@ var lastFill=null;
 
             for(var i = 0, len = array.length; i < len; i++) {
 
-                var className=array[i].room;
+                var className=array[i].number;
                 var idClassNameSvg = "#"+className.toLowerCase();
                 var status=null;
 
-                if (array[i].class=='green') {
-                    status=colGreen;
-                }
-                else if (array[i].class=='yellow') {
-                    status=colYellow;
-                }
-                else {
-                    status=colRed;
+                //                if (array[i].class=='green') {
+                //                    status=colGreen;
+                //                }
+                //                else if (array[i].class=='yellow') {
+                //                    status=colYellow;
+                //                }
+                //                else {
+                //                    status=colRed;
+                //                }
+
+                switch(array[i].class) {
+                    case 'dark-green':
+                        status = colDarkGreen;
+                        break;
+
+                    case 'green':
+                        status = colGreen;
+                        break;
+
+                    case 'orange':
+                        status = colOrange;
+                        break;
+
+                    case 'yellow':
+                        status = colYellow;
+                        break;
+
+                    case 'red':
+                        status = colRed;
+                        break;
                 }
 
                 $(idClassNameSvg).css('fill', status);
@@ -52,7 +76,7 @@ var lastFill=null;
                 });
 
                 $(idClassNameSvg).click(function() {
-                 //link ai dettagli di un aula
+                    //link ai dettagli di un aula
                 });
 
             }

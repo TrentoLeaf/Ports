@@ -1,0 +1,63 @@
+'use strict';
+String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
+
+// definition of Room object
+var Room = function(number) {
+    this.number = number + '';
+    this.building = this.number.contains('A') ? "1" : "2";
+    this.floor = this.number == 'B106' ? 0 : (this.number.slice(1) < 200 ? -1 : 0);
+
+    // disponibilità di default nulla
+    this.availability = 0;
+    this.states = [];
+}
+
+Room.prototype.calculateAvaiability = function(queryTime, currentTime) {
+
+    if(this.states.length == 0) {
+        throw "Please set variable 'states' before calling this method";
+    }
+
+    var diff = 0;
+    if(queryTime.getTime() < currentTime.getTime()) {
+        diff = currentTime.getHours() - queryTime.getHours();
+    }
+
+    // calcolo disponibilità da quest'ora
+    for(var i = diff; i < this.states.length; i++) {
+        if(this.states[i] == 'free') {
+            this.availability += 1;
+        } else {
+            break;
+        }
+    }
+
+    // set color
+    switch(this.availability) {
+        case 0:
+            this.class = 'red';
+            break;
+
+        case 1:
+        case 2:
+            this.class = 'orange';
+            break;
+
+        case 3:
+        case 4:
+            this.class = 'yellow';
+            break;
+
+        case 5:
+        case 6:
+            this.class = 'green';
+            break;
+
+        default:
+            this.class = 'dark-green';
+    }
+};
+
+Room.prototype.setFree = function(n) {
+    this.free = (this.availability == n);
+};
