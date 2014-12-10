@@ -43,25 +43,6 @@
 
                 // itero su tutte aule e setto alcuni parametri
                 for(var roomIndex = 0, rooms = results[0].data.statuses, lenght = rooms.length; roomIndex < lenght; roomIndex++) {
-
-                    // OK
-                    //data.push({room : rooms[roomIndex].room, availability: 0, states: []});
-                    //for(var i = 0; i < results.length; i++) {
-                    //    if(results[i].data.statuses[roomIndex].status == 'free') {
-                    //        data[roomIndex].availability += 1;
-                    //    } else {
-                    //        break;
-                    //    }
-                    //}
-
-                    // TODO!
-                    // var logString = "";
-                    // logString += roomIndex + " " + rooms[roomIndex].room + " ";
-                    // for(var i = 0; i < results.length; i++) {
-                    //     logString += results[i].data.statuses[roomIndex].status + " ";
-                    // }
-                    // $log.debug(logString);
-
                     var room = new Room(rooms[roomIndex].room);
 
                     // salvo stato di tutto il giorno di questa aula... 
@@ -73,31 +54,6 @@
                     room.setFree(nRequests);
                     data.push(room);
                 }
-
-                //                for(var i = 0, lenght = rooms.length; i < lenght; i++) {
-                //                    data[i].building = rooms[i].room.contains('A') ? "1" : "2";
-                //                    data[i].floor = rooms[i].room.slice(1) < 200 ? -1 : 0;
-                //
-                //                    switch(data[i].availability) {
-                //                        case 1:
-                //                        case 2:
-                //                            data[i].class = 'red';
-                //                            break;
-                //                        case 3:
-                //                        case 4:
-                //                            data[i].class = 'yellow';
-                //                            break;
-                //                        case 5:
-                //                        case 6:
-                //                            data[i].class = 'green';
-                //                            break;
-                //
-                //                        default:
-                //                            data[i].class = 'green';
-                //                    }
-                //
-                //                    data[i].free = (data[i].availability == nRequests);
-                //                }
 
                 $log.debug(data);
 

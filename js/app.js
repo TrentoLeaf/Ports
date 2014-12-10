@@ -36,7 +36,7 @@ var test;
 
     app.directive('load', function() {
         return {
-            restrict: 'E',
+            restrict: 'A',
             controller: function($scope, DataService) {
 
                 // parameters to load correctly data
@@ -46,16 +46,6 @@ var test;
                 // array containing rooms data
                 $scope.rooms = [];
 
-                // calculate date
-                //                var now = new Date();
-                // DateUtilities.addDay(now, 2);
-                // now.setHours(8);
-                //                DateUtilities.roundToFollowingHalfHour(now);
-                //                $scope.changed = DateUtilities.nextOpenTime(now);
-                //                $scope.date = now;
-
-                //                 retrieve data...
-                //                var promise = DataService.retrieve(now);
                 var promise = DataService.retrieve();
                 promise.then(function(data) {
                     $scope.rooms = data.data;
@@ -67,6 +57,7 @@ var test;
                     $scope.loading = false;
                 });
                 
+                // TODO: remove!
                 test = $scope;
             }
         };
