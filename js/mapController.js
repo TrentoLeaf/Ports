@@ -68,7 +68,9 @@ var lastFill=null;
 
                 $(idClassNameSvg).click(function() {
                     //link ai dettagli di un aula
-                });
+                    var aula= ($(this).attr('id')).toUpperCase();
+                     location.href = "#/details/"+aula;
+                  });
 
             }
         };
