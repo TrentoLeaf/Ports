@@ -23,16 +23,6 @@ var lastFill=null;
                 var idClassNameSvg = "#"+className.toLowerCase();
                 var status=null;
 
-                //                if (array[i].class=='green') {
-                //                    status=colGreen;
-                //                }
-                //                else if (array[i].class=='yellow') {
-                //                    status=colYellow;
-                //                }
-                //                else {
-                //                    status=colRed;
-                //                }
-
                 switch(array[i].class) {
                     case 'dark-green':
                         status = colDarkGreen;
