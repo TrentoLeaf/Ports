@@ -19,7 +19,6 @@
     <table ng-hide="loading" class="rooms_table">
         <thead>
             <tr>
-                <!--                <th class="first_colon table_first_element"></th>-->
                 <th><h4><a href="" ng-click="order = 'room'; reverse=!reverse">AULA</a></h4></th>
                 <th><h4><a href="" ng-click="order = 'building'; reverse=!reverse">EDIFICIO</a></h4></th>
                 <th><h4><a href="" ng-click="order = 'floor'; reverse=!reverse">PIANO</a></h4></th>
@@ -28,11 +27,10 @@
         </thead>
         <tbody>
             <tr ng-repeat="room in rooms | orderBy:order:reverse | filter: isFree">
-                <!--                <td class="{{room.class}} first_colon"></td>-->
                 <td class="{{room.class}}"><h4><a href="#/details/{{room.number}}">{{room.number}}</a></h4></td>
                 <td class="{{room.class}}"><h4>Povo {{room.building}}</h4></td>
                 <td class="{{room.class}}"><h4>{{room.floor}}</h4></td>
-                <td class="{{room.class}}"><h4>{{room.free ? 'all day' : room.availability + ore}}</h4></td>
+                <td class="{{room.class}}"><h4>{{room.free ? 'all day' : (room.availability == 1 ?  "< 1 ora" : room.availability + 'ore') }}</h4></td>
             </tr>
         </tbody>
     </table>
