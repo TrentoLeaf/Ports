@@ -18,14 +18,57 @@
 (function() {
     var searchModule = angular.module('searchModule', []);
 
-    searchModule.controller('SearchController', ['$scope', '$routeParams', function($scope, $routeParams) {
+    searchModule.filter('myfilter', function() {
+        return function(items, building, floor, room) {
+            var filtered = [];
 
-        // save search parameters
-        $scope.building = $routeParams.building;
-        $scope.level = $routeParams.level;
-        $scope.room = $routeParams.room;
-        $scope.day = $routeParams.day;
+            for(var i = 0, len = items.length; i < len; i++) {
+                var item = items[i];
+                if (item.availability !== 0) {
+                    if(item.building == building || building == 'all') {
+                        if(item.floor == floor || floor == 'all') {
+                            if(room == undefined || room == 'all' || item.number == room) {
+                                filtered.push(item);
+                            }
+                        }
+                    }
+                }
+            }
+
+            return filtered;
+        };
+    });
+
+    searchModule.controller('SearchController', ['$scope', function($scope) {
+
+        // TODO...
+        $scope.roomNumbers = ['A101', 'A102', 'A103', 'A104', 'TODO', 'waiting for teo\'s JSON'];
+
+        $scope.order = 'availability';
+        $scope.reverse = true;
+
+        $scope.building = 'all';
+        $scope.floor = 'all';
+
+        $scope.selectBuilding = function(value) {
+            $scope.building = value;
+        };
+
+        $scope.selectFloor = function(value) {
+            $scope.floor = value;
+        };
+
     }]);
+
+    // TODO!
+    //    searchModule.controller('ResultsController', ['$scope', '$routeParams', function($scope, $routeParams) {
+    //
+    //        // save search parameters
+    //        $scope.building = $routeParams.building;
+    //        $scope.level = $routeParams.level;
+    //        $scope.room = $routeParams.room;
+    //        $scope.day = $routeParams.day;
+    //    }]);
 
 })();
 
