@@ -73,7 +73,7 @@
                         <td class="{{room.class}}"><h4><a href="#/details/{{room.number}}">{{room.number}}</a></h4></td>
                         <td class="{{room.class}}"><h4>Povo {{room.building}}</h4></td>
                         <td class="{{room.class}}"><h4>{{room.floor}}</h4></td>
-                        <td class="{{room.class}}"><h4>{{room.free ? 'all day' : room.availability + ore}}</h4></td>
+                        <td class="{{room.class}}"><h4>{{room.free ? 'all day' : (room.availability == 1 ?  "< 1 ora" : room.availability + ' ore') }}</h4></td>
                     </tr>
                 </tbody>
             </table>
