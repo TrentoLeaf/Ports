@@ -1,4 +1,4 @@
-//'use strict';
+'use strict';
 
 (function() {
     var serviceModule = angular.module('serviceModule', []);

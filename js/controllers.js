@@ -32,10 +32,26 @@
 (function() {
     var detailsModule = angular.module('detailsModule', []);
 
-    detailsModule.controller('DetailsController', ['$scope', '$routeParams', function($scope, $routeParams) {
+    detailsModule.controller('DetailsController', ['$scope', '$routeParams', '$log', function($scope, $routeParams, $log) {
 
         // save search parameters
         $scope.number = $routeParams.number;
+
+        // search index of array
+        var index = undefined;
+        for(var i = 0, rooms = $scope.rooms, len = rooms.length; i < len; i++) {
+            if(rooms[i].number == $scope.number) {
+                index = i;
+            }
+        }
+
+        if(index == undefined) {
+            $scope.notFound = true;
+        } else {
+            $scope.states = $scope.rooms[index].states;
+            $log.info($scope.states);
+        }
+
     }]);
 
 })();
