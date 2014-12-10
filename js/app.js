@@ -1,7 +1,5 @@
 'use strict';
 
-var test;
-
 (function() {
     var app = angular.module('ports', [ 'listModule', 'mapModule', 'searchModule', 'detailsModule', 'ngRoute']);
 
@@ -19,10 +17,11 @@ var test;
             templateUrl : 'partials/map.html',
             controller: 'MapController'
         }).when('/search', {
-            templateUrl : 'partials/search.html'
-        }).when('/search/:building/:level/:room/:day', {
-            templateUrl : 'partials/results.html',
+            templateUrl : 'partials/search.html',
             controller: 'SearchController'
+            //        }).when('/search/:building/:level/:room/:day', {
+            //            templateUrl : 'partials/results.html',
+            //            controller: 'ResultsController'
         }).when('/timetable', {
             templateUrl : 'partials/timetable.html'
         }).when('/about', {
@@ -56,9 +55,7 @@ var test;
                 }).finally(function() {
                     $scope.loading = false;
                 });
-                
-                // TODO: remove!
-                test = $scope;
+
             }
         };
     });
