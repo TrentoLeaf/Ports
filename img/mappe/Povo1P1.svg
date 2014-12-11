@@ -9,16 +9,10 @@
    xmlns="http://www.w3.org/2000/svg"
    version="1.1"
    width="100%"
+   height="100%"
    viewBox="0 0 8130.0002 14113"
-   id="svg4604"
-   xml:space="preserve"
-   style="fill-rule:evenodd"><metadata
-     id="metadata4908"><rdf:RDF><cc:Work
-         rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
-           rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
-     id="defs4606"><style
-       type="text/css"
-       id="style4608" /></defs><line
+   id="fileSVGP1P1">
+       <line
      style="fill:none;stroke:#1a1a1a;stroke-width:40;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none"
      id="line4612"
      y2="2430.9998"
