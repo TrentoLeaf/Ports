@@ -30,7 +30,7 @@
 
         <script src="js/script.js"></script>
         <script src="js/date.js"></script>
-        
+
         <!--ANGULAR, JAVASCRIPT-->
         <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular.min.js"></script>-->
         <!--<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.4/angular-route.min.js"></script>-->
@@ -45,6 +45,12 @@
 
         <!--IE compatibility mode-->
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <!-- Tentativo 1 navbar mobile by Willo -->
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link type="text/css" rel="stylesheet" href="css/navbar.css">
+        <script src="js/navbar.js"></script>
+
     </head>
 
     <body>
@@ -64,33 +70,42 @@
             </div>
 
             <!-- nav items -->
-            <div class="navbar_rcontainer">
-                <ul class="navbar_list">
+            <div class="navbar_rcontainer clearfix">
+                <ul class="navbar_list clearfix">
                     <li class="navbar_listit elen">
-                        <a class="navbar_listit_a" href="#/">
-                            <img class="navbar_icon" alt="elenco" src="img/navbar_icons/mono_black/list.png">
-                            <div class="navbar_text">Elenco</div>
+                        <a href="#">
+                            <a class="navbar_listit_a" href="#/">
+                                <img class="navbar_icon" alt="elenco" src="img/navbar_icons/mono_black/list.png">
+                                <div class="navbar_text">Elenco</div>
+                            </a>
                         </a>
-                      </li>
+                    </li>
                     <li class="navbar_listit map">
-                        <a class="navbar_listit_a" href="#/map">
-                            <img class="navbar_icon" alt="mappa" src="img/navbar_icons/mono_black/map.png">
-                            <div class="navbar_text">Mappa</div>
+                        <a href="#">
+                            <a class="navbar_listit_a" href="#/map">
+                                <img class="navbar_icon" alt="mappa" src="img/navbar_icons/mono_black/map.png">
+                                <div class="navbar_text">Mappa</div>
+                            </a>
                         </a>
                     </li>
                     <li class="navbar_listit search">
-                        <a class="navbar_listit_a" href="#/search">
-                            <img class="navbar_icon" alt="cerca" src="img/navbar_icons/mono_black/magnifier.png">
-                            <div class="navbar_text">Ricerca Avanzata</div>
+                        <a href="#">
+                            <a class="navbar_listit_a" href="#/search">
+                                <img class="navbar_icon" alt="cerca" src="img/navbar_icons/mono_black/magnifier.png">
+                                <div class="navbar_text">Ricerca Avanzata</div>
+                            </a>
                         </a>
                     </li>
                     <li class="navbar_listit time">
-                        <a class="navbar_listit_a" href="#/timetable">
-                            <img class="navbar_icon" alt="orari" src="img/navbar_icons/mono_black/clock.png">
-                            <div class="navbar_text">Orari Strutture</div>
+                        <a href="#">
+                            <a class="navbar_listit_a" href="#/timetable">
+                                <img class="navbar_icon" alt="orari" src="img/navbar_icons/mono_black/clock.png">
+                                <div class="navbar_text">Orari Strutture</div>
+                            </a>
                         </a>
                     </li>
                 </ul>
+                <a href="#" id="pull"><img src="/img/navbar_icons/minimizedNavbar.png"></a>  
             </div>
         </navbar>
 
