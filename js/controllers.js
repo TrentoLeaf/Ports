@@ -69,61 +69,76 @@
         // save search parameters
         $scope.number = $routeParams.number;
 
-        // search index of array
-        var index = undefined;
-        for(var i = 0, rooms = $scope.rooms, len = rooms.length; i < len; i++) {
-            if(rooms[i].number == $scope.number) {
-                index = i;
+        var elaborate = function() {
+
+            // search index of array
+            var index = undefined;
+            for(var i = 0, rooms = $scope.rooms, len = rooms.length; i < len; i++) {
+                if(rooms[i].number == $scope.number) {
+                    index = i;
+                }
+            }
+
+            if(index == undefined) {
+                $scope.notFound = true;
+            } else {
+                $scope.states = $scope.rooms[index].states;
+                $log.info($scope.states);
+            }
+
+            //mappa dettagli aula
+            var map_source=null;
+
+            if ($scope.rooms[index].building=="1") {
+                if ($scope.rooms[index].floor=="-1") {
+                    map_source="../img/mappe/Povo1PT.svg";
+                }
+                else if ($scope.rooms[index].floor=="0") {
+                    map_source="../img/mappe/Povo1P1.svg";
+                }
+            }
+            else if ($scope.rooms[index].building=="2") {
+                if ($scope.rooms[index].floor=="-1") {
+                    map_source="../img/mappe/Povo2PT.svg";
+                }
+                else if ($scope.rooms[index].floor=="0") {
+                    map_source="../img/mappe/Povo2P1.svg";
+                }
+                //if ($scope.rooms[index].number=="B106" || $scope.rooms[index].number=="B107") {
+                //    map_source="../img/mappe/Povo2P1.svg";
+                //}
+                //else {
+                //    map_source="../img/mappe/Povo2PT.svg";
+                //}
+            }
+
+            if (map_source!=null) {
+                var s = Snap("#map_detail");
+                Snap.load(map_source, onSVGLoaded ) ;
+            }
+            function onSVGLoaded( data ){
+                var rectID= "#"+($scope.rooms[index].number).toLowerCase();
+                var rect = data.select(rectID);
+                rect.attr("fill", "#42A5F5");
+                s.append( data );
             }
         }
 
-        if(index == undefined) {
-            $scope.notFound = true;
+        // aspetta che vengano caricati i dati... appena pronti, chiama elaborate
+        if($scope.loading) {
+            $log.warn("Data loadng... WAIT!");
+
+            $scope.$watch('loading', function(newValue, oldValue) {
+
+                if(!newValue && oldValue) {
+                    $log.info("Data loaded!");
+                    elaborate();
+                }
+            });
+
         } else {
-            $scope.states = $scope.rooms[index].states;
-            $log.info($scope.states);
-        }
-
-        //mappa dettagli aula
-        var map_source=null;
-
-        if ($scope.rooms[index].building=="1") {
-            if ($scope.rooms[index].floor=="-1") {
-                map_source="../img/mappe/Povo1PT.svg";
-            }
-            else if ($scope.rooms[index].floor=="0") {
-                map_source="../img/mappe/Povo1P1.svg";
-            }
-            else {}
-        }
-        else if ($scope.rooms[index].building=="2") {
-            /* Non funzione perchè tutte le aule del Povo2 sono considerate sul piano -1
-            if ($scope.rooms[index].floor=="-1") {
-                map_source="../img/mappe/Povo2PT.svg";
-            }
-            else if ($scope.rooms[index].floor=="0") {
-                map_source="../img/mappe/Povo2P1.svg";
-            }
-            */
-            if ($scope.rooms[index].number=="B106" || $scope.rooms[index].number=="B107") {
-                map_source="../img/mappe/Povo2P1.svg";
-            }
-            else {
-                map_source="../img/mappe/Povo2PT.svg";
-            }
-        }
-
-        else {}
-
-        if (map_source!=null) {
-            var s = Snap("#map_detail");
-            Snap.load(map_source, onSVGLoaded ) ;
-        }
-        function onSVGLoaded( data ){
-            var rectID= "#"+($scope.rooms[index].number).toLowerCase();
-            var rect = data.select(rectID);
-            rect.attr("fill", "#42A5F5");
-            s.append( data );
+            $log.info("Data already loaded...");
+            elaborate();
         }
 
     }]);
