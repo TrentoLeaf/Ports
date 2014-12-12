@@ -2,7 +2,10 @@
 <div class="rooms_panel">
     <!-- Default panel contents -->
 
-     <div class="legenda">
+    <div class="panel-heading">
+        <h2>Disponibili Ora</h2>
+    </div>
+    <div class="legenda">
         <ul>
             <li>
                 <div class="circle red"></div> Occupata
@@ -21,11 +24,6 @@
             </li>
         </ul>
     </div>
-
-    <div class="panel-heading">
-        <h2>Disponibili Ora</h2>
-    </div>
-
     <!-- <div class="hide">-->
     <div>
         <p>currentDate = {{currentDate | date: 'EEEE - dd-MM-yyyy - HH:mm'}}</p>
@@ -52,8 +50,8 @@
                 <td class="{{room.class}}"><h4>Povo {{room.building}}</h4></td>
                 <td class="{{room.class}}"><h4>{{room.floor}}</h4></td>
                 <td class="{{room.class}}"><h4>{{room.free ? 'all day' : (room.availability == 1 ?  "< 1 ora" : room.availability + ' ore') }}</h4></td>
-            </tr>
-        </tbody>
-    </table>
+                    </tr>
+                    </tbody>
+                    </table>
 
-</div>
+                    </div>
