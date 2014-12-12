@@ -1,26 +1,45 @@
 <!--Inizio tabella orari-->
 <div class="rooms_panel">
     <!-- Default panel contents -->
+
+     <div class="legenda">
+        <ul>
+            <li>
+                <div class="circle red"></div> Occupata
+            </li>
+            <li>
+                <div class="circle orange"></div> Libera per 2 ore o meno
+            </li>
+            <li>
+                <div class="circle yellow"></div> Libera per 3-4 ore
+            </li>
+            <li>
+                <div class="circle green"></div> Libera per 5-6 ore
+            </li>
+            <li>
+                <div class="circle dark-green"></div> Libera per tutta la giornata
+            </li>
+        </ul>
+    </div>
+
     <div class="panel-heading">
         <h2>Disponibili Ora</h2>
     </div>
 
-    <div class="hide">
-        <p>date = {{date | date: 'EEEE - dd-MM-yyyy - HH:mm'}}</p>
-        <p>changed = {{changed}}</p>
+    <!-- <div class="hide">-->
+    <div>
+        <p>currentDate = {{currentDate | date: 'EEEE - dd-MM-yyyy - HH:mm'}}</p>
+        <p>queryDate = {{queryDate | date: 'EEEE - dd-MM-yyyy - HH:mm'}}</p>
         <p>loading = {{loading}}</p>
         <p>error = {{error}}</p>
-        <p>order = {{order}}</p>
-        <p>reverse = {{reverse}}</p>
     </div>
 
-    <!-- <p ng-show="loading">Loading...</p>-->
+    <p ng-show="loading">Loading...</p>
 
     <!-- Tabella -->
     <table ng-hide="loading" class="rooms_table">
         <thead>
             <tr>
-<!--                <th class="first_colon table_first_element"></th>-->
                 <th><h4><a href="" ng-click="order = 'room'; reverse=!reverse">AULA</a></h4></th>
                 <th><h4><a href="" ng-click="order = 'building'; reverse=!reverse">EDIFICIO</a></h4></th>
                 <th><h4><a href="" ng-click="order = 'floor'; reverse=!reverse">PIANO</a></h4></th>
@@ -29,13 +48,12 @@
         </thead>
         <tbody>
             <tr ng-repeat="room in rooms | orderBy:order:reverse | filter: isFree">
-<!--                <td class="{{room.class}} first_colon"></td>-->
-                <td class="{{room.class}}"><h4><a href="#/details/{{room.room}}">{{room.room}}</a></h4></td>
+                <td class="{{room.class}}"><h4><a href="#/details/{{room.number}}">{{room.number}}</a></h4></td>
                 <td class="{{room.class}}"><h4>Povo {{room.building}}</h4></td>
                 <td class="{{room.class}}"><h4>{{room.floor}}</h4></td>
-                <td class="{{room.class}}"><h4>{{room.free ? '>' : ''}} {{room.availability}} ore</h4></td>
+                <td class="{{room.class}}"><h4>{{room.free ? 'all day' : (room.availability == 1 ?  "< 1 ora" : room.availability + ' ore') }}</h4></td>
             </tr>
         </tbody>
     </table>
-    
+
 </div>

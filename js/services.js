@@ -1,5 +1,4 @@
 'use strict';
-String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
 
 (function() {
     var serviceModule = angular.module('serviceModule', []);
@@ -7,11 +6,16 @@ String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
     serviceModule.service('DataService', ['$q', '$http', '$log', function($q, $http, $log) {
 
         /* @now in secondi! */
-        this.retrieve = function(date) {
-            var now = date.getTime() / 1000;
+        this.retrieve = function() {
+            var currentDate = new Date(),
+                queryDate = new Date();
+
+            DateUtilities.nextOpenDay(queryDate);
+            var now = queryDate.getTime() / 1000;
 
             var baseUrl = 'http://studyspaces-unitn.tk/api/roomStatus.json?timestamp=', callback = '&callback=JSON_CALLBACK',
-                requests = [], nRequests = 8,
+                requests = [],
+                nRequests = 13,
                 data = [];
 
             // wrap result
@@ -39,54 +43,21 @@ String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
 
                 // itero su tutte aule e setto alcuni parametri
                 for(var roomIndex = 0, rooms = results[0].data.statuses, lenght = rooms.length; roomIndex < lenght; roomIndex++) {
-                    data.push({room : rooms[roomIndex].room, availability: 0});
+                    var room = new Room(rooms[roomIndex].room);
 
-                    // TODO!
-                    // var logString = "";
-                    // logString += roomIndex + " " + rooms[roomIndex].room + " ";
-                    // for(var i = 0; i < results.length; i++) {
-                    //     logString += results[i].data.statuses[roomIndex].status + " ";
-                    // }
-                    // $log.debug(logString);
-
+                    // salvo stato di tutto il giorno di questa aula... 
                     for(var i = 0; i < results.length; i++) {
-                        if(results[i].data.statuses[roomIndex].status == 'free') {
-                            data[roomIndex].availability += 1;
-                        } else {
-                            break;
-                        }
-                    }
-                }
-
-                // TODO: bind each room with floot and building (povo1 vs povo2)
-                for(var i = 0, lenght = rooms.length; i < lenght; i++) {
-                    data[i].building = rooms[i].room.contains('A') ? "1" : "2";
-                    data[i].floor = rooms[i].room.slice(1) < 200 ? -1 : 0;
-
-                    switch(data[i].availability) {
-                        case 1:
-                        case 2:
-                            data[i].class = 'red';
-                            break;
-                        case 3:
-                        case 4:
-                            data[i].class = 'yellow';
-                            break;
-                        case 5:
-                        case 6:
-                            data[i].class = 'green';
-                            break;
-
-                        default:
-                            data[i].class = 'green';
+                        room.states.push(results[i].data.statuses[roomIndex].status);
                     }
 
-                    data[i].free = (data[i].availability == nRequests);
+                    room.calculateAvaiability(queryDate, currentDate);
+                    room.setFree(nRequests);
+                    data.push(room);
                 }
 
                 $log.debug(data);
 
-                deferred.resolve(data);
+                deferred.resolve({data: data, queryDate: queryDate, currentDate: currentDate});
 
             }, function(error) {
                 $log.warn(error);

@@ -1,16 +1,5 @@
 $(document).ready(function(){
 
-    /* visualizzazione titolo 'PORTS' completo */
-    $(".brandtitle").hover(function(){
-
-        $(".brandtxt").show(400);
-    },
-                           function(){
-        $(".brandtxt").hide(1000);
-    });
-
-    /* END visualizzazione titolo 'PORTS' completo END */
-
     /* Hover icone navbar */
     var changeColor = function(element, color) {
         $(element).find("div").css("color",color); //cambio colore testo

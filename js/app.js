@@ -17,10 +17,11 @@
             templateUrl : 'partials/map.html',
             controller: 'MapController'
         }).when('/search', {
-            templateUrl : 'partials/search.html'
-        }).when('/search/:building/:level/:room/:day', {
-            templateUrl : 'partials/results.html',
+            templateUrl : 'partials/search.html',
             controller: 'SearchController'
+            //        }).when('/search/:building/:level/:room/:day', {
+            //            templateUrl : 'partials/results.html',
+            //            controller: 'ResultsController'
         }).when('/timetable', {
             templateUrl : 'partials/timetable.html'
         }).when('/about', {
@@ -34,7 +35,7 @@
 
     app.directive('load', function() {
         return {
-            restrict: 'E',
+            restrict: 'A',
             controller: function($scope, DataService) {
 
                 // parameters to load correctly data
@@ -44,23 +45,17 @@
                 // array containing rooms data
                 $scope.rooms = [];
 
-                // calculate date
-                var now = new Date();
-                // DateUtilities.addDay(now, 2);
-                // now.setHours(8);
-                DateUtilities.roundToFollowingHalfHour(now);
-                $scope.changed = DateUtilities.nextOpenTime(now);
-                $scope.date = now;
-
-                // retrieve data...
-                var promise = DataService.retrieve(now);
+                var promise = DataService.retrieve();
                 promise.then(function(data) {
-                    $scope.rooms = data;
+                    $scope.rooms = data.data;
+                    $scope.queryDate = data.queryDate;
+                    $scope.currentDate = data.currentDate;
                 }, function(error) {
                     $scope.error = true;
                 }).finally(function() {
                     $scope.loading = false;
                 });
+
             }
         };
     });
