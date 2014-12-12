@@ -59,17 +59,6 @@
         };
 
     }]);
-
-    // TODO!
-    //    searchModule.controller('ResultsController', ['$scope', '$routeParams', function($scope, $routeParams) {
-    //
-    //        // save search parameters
-    //        $scope.building = $routeParams.building;
-    //        $scope.level = $routeParams.level;
-    //        $scope.room = $routeParams.room;
-    //        $scope.day = $routeParams.day;
-    //    }]);
-
 })();
 
 (function() {
@@ -139,4 +128,17 @@
 
     }]);
 
+})();
+
+(function() {
+    var errorModule = angular.module('errorModule', [ ]);
+
+    errorModule.controller('ErrorController', [ '$interval', function($interval) {
+
+        // reindirizza alla pagina iniziale dopo 2 secondi...
+        $interval(function() {
+            window.location.href = '/';
+        }, 8000);
+
+    }]);
 })();
