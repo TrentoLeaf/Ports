@@ -1,7 +1,7 @@
 'use strict';
 
 (function() {
-    var app = angular.module('ports', [ 'listModule', 'mapModule', 'searchModule', 'detailsModule', 'ngRoute']);
+    var app = angular.module('ports', [ 'listModule', 'mapModule', 'searchModule', 'detailsModule', 'errorModule', 'ngRoute']);
 
     app.config([ '$routeProvider', function($routeProvider) {
         $routeProvider.when('/list', {
@@ -19,21 +19,19 @@
         }).when('/search', {
             templateUrl : 'partials/search.html',
             controller: 'SearchController'
-            //        }).when('/search/:building/:level/:room/:day', {
-            //            templateUrl : 'partials/results.html',
-            //            controller: 'ResultsController'
         }).when('/timetable', {
             templateUrl : 'partials/timetable.html'
         }).when('/about', {
             templateUrl : 'partials/about.html'
+        }).when('/error', {
+            templateUrl : 'partials/error.html',
+            controller: 'ErrorController'
         }).otherwise({
             redirectTo : '/list'
-        }).when('/results', {
-            templateUrl : 'partials/results.html'
         });
     } ]);
 
-    app.directive('load', function() {
+    app.directive('load', [ '$log', function($log) {
         return {
             restrict: 'A',
             controller: function($scope, DataService) {
@@ -52,11 +50,14 @@
                     $scope.currentDate = data.currentDate;
                 }, function(error) {
                     $scope.error = true;
+
+                    $log.info("Errore API...");
+                    window.location.href = '#/error';
                 }).finally(function() {
                     $scope.loading = false;
                 });
 
             }
         };
-    });
+    }]);
 })();
