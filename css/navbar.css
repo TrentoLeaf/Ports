@@ -17,6 +17,15 @@
 
 
 @media only screen and (max-width : 900px) {  
+    .ports-minimize{
+        display: none;
+    }
+     
+} 
+
+
+@media only screen and (max-width : 690px) {  
+    
     .navbar_list {  
         display: none;  
     }  
@@ -43,12 +52,5 @@
         rightright: 15px;  
         top: 10px;  
     } 
-} 
 
-
-@media only screen and (max-width : 690px) {  
-    .ports-minimize{
-        display: none;
-    }  
-
-
+}
