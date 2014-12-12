@@ -183,7 +183,7 @@ a {
     margin-bottom: .5em;
 }
 
-/* DISPONIBILI ORA */
+/* LIST */
 .rooms_panel {
 
     display: flex;
@@ -341,7 +341,6 @@ visibility: hidden !important;
 /* SEARCH*/
 .search_panel {
 
-    margin-bottom: 7.5em;
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -354,7 +353,7 @@ visibility: hidden !important;
 
     margin: 0;
     margin-top: .3em;
-    margin-bottom: 2em;
+    margin-bottom: 1.5em;
     font-size: 3em;
     font-weight: 300;
     text-transform: uppercase;
@@ -368,9 +367,52 @@ visibility: hidden !important;
     font-weight: 300;
 } 
 
+.filtri {
+
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.filtri h2 {
+
+    margin-bottom: 4.5em;
+}
+
+.risultati {
+
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.filters_container {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.edificio, .piano, .aula {
+
+    flex-basis: 8em;
+}
+
+.btn_container {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .filtri button {
 
     padding: 0;
+    margin-bottom: .5em;
     border: 0;
     width: 7em;
     height: 2.5em;
@@ -390,9 +432,23 @@ visibility: hidden !important;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
 }
 
-button:after{
+button:hover, .btn_aula:hover{
 
-    background: #66BB6A;
+    background: #42A5F5;
+}
+
+.results_table {
+
+    width: 80%;
+}
+
+.results_overflow {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 30em;
+    overflow-y: scroll;
 }
 
 /* TIMETABLE */

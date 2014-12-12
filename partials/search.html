@@ -1,4 +1,4 @@
-<div>
+<div class="search_panel">
 
     <div class="filtri">
         <div>
@@ -7,26 +7,22 @@
         <div class="filters_container">
             <div class="edificio">
                 <h3>Edificio</h3>
-                <div class="btn_edif">
-                    <div class="btn_edif_12">
+                <div class="btn_edif btn_container">
                         <button type="button" ng-click="selectBuilding(1)">Povo 1</button>
                         <button type="button" ng-click="selectBuilding(2)">Povo 2</button>
                         <button type="button" ng-click="selectBuilding('all')">Qualsiasi</button>
-                    </div>
                 </div>
             </div>
             <div class="piano">
                 <h3>Piano</h3>
-                <div class="btn_piano">
+                <div class="btn_piano btn_container">
                     <!-- ATTENZIONE: vanno raggruppati e disposti in colonna (in fase di definizione del CSS) -->
-                    <button type="button" class="btn_piano" ng-click="selectFloor(0)">Piano Terra</button>
                     <button type="button" class="btn_piano" ng-click="selectFloor(-1)">Piano -1</button>
+                    <button type="button" class="btn_piano" ng-click="selectFloor(0)">Piano Terra</button>
                     <button type="button" class="btn_piano" ng-click="selectFloor('all')">Qualsiasi</button>
                 </div>
             </div>
-        </div>
-        <div class="filters_container">
-            <div class="aula">
+            <div class="aula btn_container">
                 <h3>Aula</h3>
                 <div>
                     <select ng-model="selectedRoom" ng-init="selectedRoom='all'" class="btn_aula" name="aula">
@@ -35,7 +31,7 @@
                     </select>
                 </div>
             </div>
-        </div>
+    </div>
     </div>
 
     <div class="risultati">
@@ -43,10 +39,9 @@
             <h2>Risultati</h2>
         </div>
 
-        <div>
-
+        <div class="results_overflow">
             <!-- <div class="hide">-->
-            <div>
+            <div class="hide">
                 <p>currentDate = {{currentDate | date: 'EEEE - dd-MM-yyyy - HH:mm'}}</p>
                 <p>queryDate = {{queryDate | date: 'EEEE - dd-MM-yyyy - HH:mm'}}</p>
                 <p>loading = {{loading}}</p>
@@ -58,7 +53,7 @@
             <p ng-show="loading">Loading...</p>
 
             <!-- Tabella -->
-            <table ng-hide="loading" class="rooms_table">
+            <table ng-hide="loading" class="results_table rooms_table">
                 <thead>
                     <tr>
                         <th><h4><a href="" ng-click="order = 'room'; reverse=!reverse">AULA</a></h4></th>
@@ -77,8 +72,6 @@
                     </tr>
                 </tbody>
             </table>
-
-        </div>
-
     </div>
+</div>
 </div>
