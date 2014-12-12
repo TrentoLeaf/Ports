@@ -1,19 +1,21 @@
-$(document).ready({
+$(document).ready(function(){
+    
+    var img = "<img src=\"/img/navbar_icons/minimizedNavbar.png\">";
+    var imgReversed = "<img src=\"/img/navbar_icons/reverseMinNav.png\">";
+    
+    var reverse = true;
 
-    $(function() {  
-        var pull = $('#pull');  
-        menu = $('navbar ul');  
-        menuHeight  = menu.height();  
-
-        $(pull).on('click', function(e) {  
-            e.preventDefault();  
-            menu.slideToggle();  
-        });  
-    }); 
-
-    $(window).resize(function(){  
-        var w = $(window).width();  
-        if(w > 690 && menu.is(':hidden')) {menu.removeAttr('style');}  
-    }); 
-
+    $(".hamburger").click(function(){
+        $(".hamburger").empty();
+        if(reverse){
+            $(".hamburger").append(imgReversed);
+            reverse = false;
+            $(".mobileMenu ul").toggleClass("show");
+        }else{
+            $(".hamburger").append(img);
+            reverse = true;
+        };
+    });
+    
+    
 });
