@@ -521,6 +521,7 @@ button:after{
 }
 
 .legenda li {
+    font-weight: 300;
     width: 15em;
     display: flex;
     flex-direction: row;

@@ -89,16 +89,16 @@ var lastFill=null;
 
                         //hover
                         rect.hover(function() {
-                            lastFill=  this.attr('fill');
+                            lastFill= this.attr('fill');
                             this.attr('fill', colBlue);
-                            this.transform( 's1.3,1.3');
+                            // this.transform( 's1.3,1.3');
                         },
                                    function() {
                             this.attr('fill', lastFill);
                             lastFill= null;
-                            this.transform( 's1,1');
-                        }
-                                  );
+                            //this.transform( 's1,1');
+                        });
+
 
                         //link ai dettagli di un aula
                         rect.click(function() {
@@ -109,17 +109,6 @@ var lastFill=null;
                     }
                 }
             }
-
-
-
-
-
-
-
-
-
-
-
         };
 
 
