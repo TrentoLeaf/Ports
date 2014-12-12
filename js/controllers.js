@@ -154,19 +154,37 @@
             window.location.href = '/';
         });
 
-        // reindirizza alla pagina iniziale dopo 8 secondi...
-        $interval(function() {
-            window.location.href = '/';
-        }, 8000);
+        //        // loading state
+        //        if($scope.loading) {
+        //
+        //            // se carico bene i dati è inutile rimanere nella pagina di errore...
+        //            $scope.$watch('loading', function(newValue, oldValue) {
+        //                if(!newValue && oldValue && !$scope.error) {
+        //                    // utente pirla
+        //                    window.location.href = '/#/';
+        //                }
+        //            });
+        //
+        //            // se errore...
+        //            if($scope.error) {
+        //                // reindirizza alla pagina iniziale dopo 8 secondi...
+        //                $interval(function() {
+        //                    window.location.href = '/';
+        //                }, 8000);
+        //            }
+        //
+        //        }
 
-        $scope.$watch('loading', function(newValue, oldValue) {
-            if(!newValue && oldValue) {
-                if(!$scope.error) {
-                    // utente pirla
-                    window.location.href = '/#/';
-                }
-            }
-        });
+        // se errore -> ok
+        // altrimenti -> redirect to home (without refresh!)
+        if($scope.error) {
+            // reindirizza alla pagina iniziale dopo 8 secondi... (con refresh!)
+            $interval(function() {
+                window.location.href = '/';
+            }, 8000);
+        } else {
+            window.location.href = '/#/';
+        }
 
     }]);
 })();
