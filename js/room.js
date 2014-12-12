@@ -4,7 +4,7 @@ String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
 // definition of Room object
 var Room = function(number) {
     this.number = number + '';
-    this.building = this.number.contains('A') ? "1" : "2";
+    this.building = this.number.contains('A') ? 1 : 2;
     this.floor = (this.number == 'B106' || this.number == 'B107') ? 0 : (this.number.slice(1) < 200 ? -1 : 0);
 
     // disponibilità di default nulla
@@ -64,7 +64,7 @@ Room.prototype.setFree = function(n) {
 
 Room.prototype.setExtras = function(o) {
     this.type = o.type;
-    this.powerPointDesk = o.type;
+    this.power = o.type;
     this.places = o.places;
 
     if(this.places <= 40) {
@@ -79,4 +79,5 @@ Room.prototype.setExtras = function(o) {
         this.size = 'huge';
     }
 
+    this.card = (this.building == 2);
 }

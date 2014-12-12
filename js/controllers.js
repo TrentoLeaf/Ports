@@ -99,6 +99,9 @@
             } else {
                 $scope.states = $scope.rooms[index].states;
                 $log.info($scope.states);
+
+                $scope.room = $scope.rooms[index];
+                $log.info($scope.room);
             }
 
             //mappa dettagli aula

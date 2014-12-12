@@ -2,7 +2,19 @@
 
     <div class="panel-heading aula-title">
         <h2>Aula {{number}}</h2>
+
+        <div>
+            <img class="icon" ng-show="room.size == 'tiny'" src="../img/class_icons/dim_small.png" alt="small"/>
+            <img class="icon" ng-show="room.size == 'small'" src="../img/class_icons/dim_small.png" alt="small"/>
+            <img class="icon" ng-show="room.size == 'middle'" src="../img/class_icons/dim_medium.png" alt="medium"/>
+            <img class="icon" ng-show="room.size == 'big'" src="../img/class_icons/dim_large.png" alt="large"/>
+            <img class="icon" ng-show="room.size == 'huge'" src="../img/class_icons/dim_large.png" alt="large"/>
+            <img class="icon" ng-show="room.card" src="../img/class_icons/card.png" alt="card"/>
+            <img class="icon" ng-show="room.type == 'pc'" src="../img/class_icons/pc_class.png" alt="card"/>
+            <img class="icon" ng-show="room.power" src="../img/class_icons/plug.png" alt="card"/>
+        </div>
     </div>
+
     <div class="panel-content-details">
         <div class="tableDetail">
             <table class="table_details">
