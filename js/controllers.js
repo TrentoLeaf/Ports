@@ -135,7 +135,12 @@
 
     errorModule.controller('ErrorController', [ '$interval', function($interval) {
 
-        // reindirizza alla pagina iniziale dopo 2 secondi...
+        $("#toHomeButton").click(function() {
+            window.location.href = '/';
+        });
+
+
+        // reindirizza alla pagina iniziale dopo 8 secondi...
         $interval(function() {
             window.location.href = '/';
         }, 8000);
