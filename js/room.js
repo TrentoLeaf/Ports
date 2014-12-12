@@ -61,3 +61,22 @@ Room.prototype.calculateAvaiability = function(queryTime, currentTime) {
 Room.prototype.setFree = function(n) {
     this.free = (this.availability == n);
 };
+
+Room.prototype.setExtras = function(o) {
+    this.type = o.type;
+    this.powerPointDesk = o.type;
+    this.places = o.places;
+
+    if(this.places <= 40) {
+        this.size = 'tiny';
+    } else if(this.places <= 55) {
+        this.size = 'small';
+    } else if (this.places <= 90) {
+        this.size = 'middle';
+    } else if(this.places <= 160) {
+        this.size = 'big';
+    } else {
+        this.size = 'huge';
+    }
+
+}
