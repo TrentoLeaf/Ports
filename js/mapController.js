@@ -13,6 +13,11 @@ var lastFill=null;
 
     mapModule.controller('MapController', [ '$scope', '$log', function($scope, $log) {
 
+        // in caso di errore reindirizza alla pagina di errore
+        if($scope.error) {
+           window.location.href = '/#/error';
+        }
+
         var elabotate = function(array) {
 
             //load mappe

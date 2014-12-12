@@ -5,7 +5,7 @@ String.prototype.contains = function(it) { return this.indexOf(it) != -1; };
 var Room = function(number) {
     this.number = number + '';
     this.building = this.number.contains('A') ? "1" : "2";
-    this.floor = this.number == 'B106' ? 0 : (this.number.slice(1) < 200 ? -1 : 0);
+    this.floor = (this.number == 'B106' || this.number == 'B107') ? 0 : (this.number.slice(1) < 200 ? -1 : 0);
 
     // disponibilità di default nulla
     this.availability = 0;

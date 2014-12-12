@@ -5,6 +5,11 @@
 
     listModule.controller('ListController', [ 'DataService', '$scope', function(DataService, $scope) {
 
+        // in caso di errore reindirizza alla pagina di errore
+        if($scope.error) {
+            window.location.href = '/#/error';
+        }
+
         // custom filter
         $scope.isFree = function(value) {
             return (value.availability !== 0);
@@ -41,6 +46,11 @@
 
     searchModule.controller('SearchController', ['$scope', function($scope) {
 
+        // in caso di errore reindirizza alla pagina di errore
+        if($scope.error) {
+            window.location.href = '/#/error';
+        }
+
         // TODO...
         $scope.roomNumbers = ['A101', 'A102', 'A103', 'A104', 'TODO', 'waiting for teo\'s JSON'];
 
@@ -66,71 +76,94 @@
 
     detailsModule.controller('DetailsController', ['$scope', '$routeParams', '$log', function($scope, $routeParams, $log) {
 
+        // in caso di errore reindirizza alla pagina di errore
+        if($scope.error) {
+            window.location.href = '/#/error';
+        }
+
         // save search parameters
         $scope.number = $routeParams.number;
 
-        // search index of array
-        var index = undefined;
-        for(var i = 0, rooms = $scope.rooms, len = rooms.length; i < len; i++) {
-            if(rooms[i].number == $scope.number) {
-                index = i;
+        var elaborate = function() {
+
+            // search index of array
+            var index = undefined;
+            for(var i = 0, rooms = $scope.rooms, len = rooms.length; i < len; i++) {
+                if(rooms[i].number == $scope.number) {
+                    index = i;
+                }
+            }
+
+            if(index == undefined) {
+                $scope.notFound = true;
+            } else {
+                $scope.states = $scope.rooms[index].states;
+                $log.info($scope.states);
+            }
+
+            //mappa dettagli aula
+            var map_source=null;
+            var heading_map= null;
+
+            if ($scope.rooms[index].building=="1") {
+                if ($scope.rooms[index].floor=="-1") {
+                    map_source="../img/mappe/Povo1PT.svg";
+                    heading_map="Povo1 - Piano Terra";
+
+                }
+                else if ($scope.rooms[index].floor=="0") {
+                    map_source="../img/mappe/Povo1P1.svg";
+                    heading_map="Povo1 - Primo Piano";
+
+                }
+            }
+            else if ($scope.rooms[index].building=="2") {
+                if ($scope.rooms[index].floor=="-1") {
+                    map_source="../img/mappe/Povo2PT.svg";
+                    heading_map="Povo2 - Piano Terra";
+
+                }
+                else if ($scope.rooms[index].floor=="0") {
+                    map_source="../img/mappe/Povo2P1.svg";
+                    heading_map="Povo2 - Primo Piano";
+                }
+                //if ($scope.rooms[index].number=="B106" || $scope.rooms[index].number=="B107") {
+                //    map_source="../img/mappe/Povo2P1.svg";
+                //}
+                //else {
+                //    map_source="../img/mappe/Povo2PT.svg";
+                //}
+            }
+
+            $(".map_detail-heading").text(heading_map);
+
+            if (map_source!=null) {
+                var s = Snap("#map_detail");
+                Snap.load(map_source, onSVGLoaded ) ;
+            }
+            function onSVGLoaded( data ){
+                var rectID= "#"+($scope.rooms[index].number).toLowerCase();
+                var rect = data.select(rectID);
+                rect.attr("fill", "#42A5F5");
+                s.append( data );
             }
         }
 
-        if(index == undefined) {
-            $scope.notFound = true;
+        // aspetta che vengano caricati i dati... appena pronti, chiama elaborate
+        if($scope.loading) {
+            $log.warn("Data loadng... WAIT!");
+
+            $scope.$watch('loading', function(newValue, oldValue) {
+
+                if(!newValue && oldValue) {
+                    $log.info("Data loaded!");
+                    elaborate();
+                }
+            });
+
         } else {
-            $scope.states = $scope.rooms[index].states;
-            $log.info($scope.states);
-        }
-
-        //mappa dettagli aula
-        var map_source= null;
-        var heading_map= null;
-
-        if ($scope.rooms[index].building=="1") {
-            if ($scope.rooms[index].floor=="-1") {
-                map_source="../img/mappe/Povo1PT.svg";
-                heading_map="Povo1 - Piano Terra";
-            }
-            else if ($scope.rooms[index].floor=="0") {
-                map_source="../img/mappe/Povo1P1.svg";
-                heading_map="Povo1 - Primo Piano";
-            }
-            else {}
-        }
-        else if ($scope.rooms[index].building=="2") {
-            /* Non funzione perchè tutte le aule del Povo2 sono considerate sul piano -1
-            if ($scope.rooms[index].floor=="-1") {
-                map_source="../img/mappe/Povo2PT.svg";
-            }
-            else if ($scope.rooms[index].floor=="0") {
-                map_source="../img/mappe/Povo2P1.svg";
-            }
-            */
-            if ($scope.rooms[index].number=="B106" || $scope.rooms[index].number=="B107") {
-                map_source="../img/mappe/Povo2P1.svg";
-                heading_map="Povo2 - Piano Terra";
-            }
-            else {
-                map_source="../img/mappe/Povo2PT.svg";
-                heading_map="Povo2 - Primo Piano";
-            }
-        }
-
-        else {}
-
-        $(".map_detail-heading").text(heading_map);
-
-        if (map_source!=null) {
-            var s = Snap("#map_detail");
-            Snap.load(map_source, onSVGLoaded ) ;
-        }
-        function onSVGLoaded( data ){
-            var rectID= "#"+($scope.rooms[index].number).toLowerCase();
-            var rect = data.select(rectID);
-            rect.attr("fill", "#42A5F5");
-            s.append( data );
+            $log.info("Data already loaded...");
+            elaborate();
         }
 
     }]);
@@ -146,19 +179,37 @@
             window.location.href = '/';
         });
 
-        // reindirizza alla pagina iniziale dopo 8 secondi...
-        $interval(function() {
-            window.location.href = '/';
-        }, 8000);
+        //        // loading state
+        //        if($scope.loading) {
+        //
+        //            // se carico bene i dati è inutile rimanere nella pagina di errore...
+        //            $scope.$watch('loading', function(newValue, oldValue) {
+        //                if(!newValue && oldValue && !$scope.error) {
+        //                    // utente pirla
+        //                    window.location.href = '/#/';
+        //                }
+        //            });
+        //
+        //            // se errore...
+        //            if($scope.error) {
+        //                // reindirizza alla pagina iniziale dopo 8 secondi...
+        //                $interval(function() {
+        //                    window.location.href = '/';
+        //                }, 8000);
+        //            }
+        //
+        //        }
 
-        $scope.$watch('loading', function(newValue, oldValue) {
-            if(!newValue && oldValue) {
-                if(!$scope.error) {
-                    // utente pirla
-                    window.location.href = '/#/';
-                }
-            }
-        });
+        // se errore -> ok
+        // altrimenti -> redirect to home (without refresh!)
+        if($scope.error) {
+            // reindirizza alla pagina iniziale dopo 8 secondi... (con refresh!)
+            $interval(function() {
+                window.location.href = '/';
+            }, 8000);
+        } else {
+            window.location.href = '/#/';
+        }
 
     }]);
 })();

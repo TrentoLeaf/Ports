@@ -4,16 +4,10 @@
 }
 
 .mobileMenu ul{
-    display: none;
     list-style: none;
     position:relative;
     z-index: 15;
     top: 180px;
-}
-
-.show{
-    display: inherit;
-    position:relative;
 }
 
 .hamburger{
