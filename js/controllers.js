@@ -133,17 +133,25 @@
 (function() {
     var errorModule = angular.module('errorModule', [ ]);
 
-    errorModule.controller('ErrorController', [ '$interval', function($interval) {
+    errorModule.controller('ErrorController', [ '$interval', '$scope', function($interval, $scope) {
 
         $("#toHomeButton").click(function() {
             window.location.href = '/';
         });
 
-
         // reindirizza alla pagina iniziale dopo 8 secondi...
         $interval(function() {
             window.location.href = '/';
         }, 8000);
+
+        $scope.$watch('loading', function(newValue, oldValue) {
+            if(!newValue && oldValue) {
+                if(!$scope.error) {
+                    // utente pirla
+                    window.location.href = '/#/';
+                }
+            }
+        });
 
     }]);
 })();
