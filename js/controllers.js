@@ -5,6 +5,11 @@
 
     listModule.controller('ListController', [ 'DataService', '$scope', function(DataService, $scope) {
 
+        // in caso di errore reindirizza alla pagina di errore
+        if($scope.error) {
+           window.location.href = '/#/error';
+        }
+
         // custom filter
         $scope.isFree = function(value) {
             return (value.availability !== 0);
@@ -41,6 +46,11 @@
 
     searchModule.controller('SearchController', ['$scope', function($scope) {
 
+        // in caso di errore reindirizza alla pagina di errore
+        if($scope.error) {
+           window.location.href = '/#/error';
+        }
+
         // TODO...
         $scope.roomNumbers = ['A101', 'A102', 'A103', 'A104', 'TODO', 'waiting for teo\'s JSON'];
 
@@ -65,6 +75,11 @@
     var detailsModule = angular.module('detailsModule', []);
 
     detailsModule.controller('DetailsController', ['$scope', '$routeParams', '$log', function($scope, $routeParams, $log) {
+
+        // in caso di errore reindirizza alla pagina di errore
+        if($scope.error) {
+           window.location.href = '/#/error';
+        }
 
         // save search parameters
         $scope.number = $routeParams.number;
