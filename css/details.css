@@ -2,7 +2,7 @@
 }
 
 .aula-title h2{
-font-weight: 300;
+    font-weight: 300;
     font-size: 3em;
 }
 
@@ -27,14 +27,14 @@ font-weight: 300;
 }
 
 .table_details {
-width: 100%;
+    width: 100%;
 }
 
 .table_details th{
     background-color: #45A5F5;
     color: white;
     font-size: 1.2em;
-     font-weight: 300;
+    font-weight: 300;
 }
 
 .table_details td:nth-child(1){
@@ -43,28 +43,35 @@ width: 100%;
     width: 30%;
     text-align: center;
     padding: 0.5em;
-      color: white;
+    color: white;
 }
 
 .table_details td:nth-child(2){
-     font-weight: 300;
+    font-weight: 300;
     box-sizing: border-box;
     width: 70%;
     text-align: center;
     padding: 0.5em;
-      color: white;
+    color: white;
 }
 
 
 .mapDetail {
     display: flex;
-      flex-basis: 500px;
-    justify-content: center;
+    flex-direction: column;
+    flex-basis: 500px;
     box-sizing: border-box;
     width: 50%;
-  margin: 1em;
+    margin: 1em;
+}
+
+.map_detail-heading {
+    font-weight: 300;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 1em;
 }
 
 .svgDivContainerDetail {
-   height: 500px;
+    height: 500px;
 }

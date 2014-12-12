@@ -85,14 +85,17 @@
         }
 
         //mappa dettagli aula
-        var map_source=null;
+        var map_source= null;
+        var heading_map= null;
 
         if ($scope.rooms[index].building=="1") {
             if ($scope.rooms[index].floor=="-1") {
                 map_source="../img/mappe/Povo1PT.svg";
+                heading_map="Povo1 - Piano Terra";
             }
             else if ($scope.rooms[index].floor=="0") {
                 map_source="../img/mappe/Povo1P1.svg";
+                heading_map="Povo1 - Primo Piano";
             }
             else {}
         }
@@ -107,13 +110,17 @@
             */
             if ($scope.rooms[index].number=="B106" || $scope.rooms[index].number=="B107") {
                 map_source="../img/mappe/Povo2P1.svg";
+                heading_map="Povo2 - Piano Terra";
             }
             else {
                 map_source="../img/mappe/Povo2PT.svg";
+                heading_map="Povo2 - Primo Piano";
             }
         }
 
         else {}
+
+        $(".map_detail-heading").text(heading_map);
 
         if (map_source!=null) {
             var s = Snap("#map_detail");
