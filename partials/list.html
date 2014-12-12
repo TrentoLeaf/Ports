@@ -24,12 +24,14 @@
             </li>
         </ul>
     </div>
-    <!-- <div class="hide">-->
-    <div>
-        <p>currentDate = {{currentDate | date: 'EEEE - dd-MM-yyyy - HH:mm'}}</p>
-        <p>queryDate = {{queryDate | date: 'EEEE - dd-MM-yyyy - HH:mm'}}</p>
-        <p>loading = {{loading}}</p>
-        <p>error = {{error}}</p>
+
+    <div class="hide">
+        <div>
+            <p>currentDate = {{currentDate | date: 'EEEE - dd-MM-yyyy - HH:mm'}}</p>
+            <p>queryDate = {{queryDate | date: 'EEEE - dd-MM-yyyy - HH:mm'}}</p>
+            <p>loading = {{loading}}</p>
+            <p>error = {{error}}</p>
+        </div>
     </div>
 
     <p ng-show="loading">Loading...</p>
