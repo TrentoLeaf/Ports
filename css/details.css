@@ -53,6 +53,7 @@
     text-align: center;
     padding: 0.5em;
     color: white;
+    display: table-cell;
 }
 
 
