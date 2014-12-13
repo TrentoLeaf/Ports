@@ -81,6 +81,7 @@ var lastFill=null;
                         //colore rect
 
                         rect.attr('fill', status);
+                        rect.attr('cursor', "pointer");
 
                         //colore label
                         var idLabelSvg= idClassNameSvg+"t";
@@ -91,6 +92,8 @@ var lastFill=null;
                         else {
                             label.attr('fill', "#lalala");
                         }
+
+                         label.attr('cursor', "pointer");
 
                         //hover
                         rect.hover(function() {
