@@ -64,7 +64,7 @@ Room.prototype.setFree = function(n) {
 
 Room.prototype.setExtras = function(o) {
     this.type = o.type;
-    this.power = o.type;
+    this.power = o.power;
     this.places = o.places;
 
     if(this.places <= 40) {
