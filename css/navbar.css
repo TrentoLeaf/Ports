@@ -1,6 +1,7 @@
 #pull{
     display: none;
     position : relative;
+    margin-right: .5em;
 }
 
 .mobileMenu {
@@ -15,12 +16,22 @@
     position:absolute;
     z-index: 999999;
     top: 5em;
-    right: 25px;
+    right: .5em;
+}
+
+.mobileMenu ul li {
+
+    margin-right: 0;
 }
 
 .hamburger{
     background: none;
     border: none;
+}
+
+.hamburger:hover {
+
+    background: white;
 }
 
 @media screen and (max-width: 1200px) {    

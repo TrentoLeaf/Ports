@@ -601,11 +601,11 @@ button:hover, .btn_aula:hover{
 /* PAGE RESIZE*/
 @media all and (max-width: 35em) {
     
-    .risultati, .filtri {
+    .credits_container p {
     
-        width: 95%;
+        font-size: 1em;
     }
-        
+    
     .rooms_table {
     
         width: 95%;
@@ -615,6 +615,12 @@ button:hover, .btn_aula:hover{
 
         display: none;
     }
+    
+    .risultati, .filtri {
+    
+        width: 95%;
+    }
+        
     
     .search_panel {
     
