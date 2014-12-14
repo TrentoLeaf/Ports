@@ -3,11 +3,19 @@
     position : relative;
 }
 
+.mobileMenu {
+
+    background: black;
+}
+
 .mobileMenu ul{
+    margin: 0;
+    padding: 0;
     list-style: none;
-    position:relative;
-    z-index: 15;
-    top: 180px;
+    position:absolute;
+    z-index: 999999;
+    top: 5em;
+    right: 25px;
 }
 
 .hamburger{
@@ -54,7 +62,7 @@
     }
     
     navbar li {  
-        width: 50%;
+        /*width: 50%;*/
         background: white;
     }
 

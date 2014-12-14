@@ -368,7 +368,8 @@ visibility: hidden !important;
 .search_panel h3 {
 
     margin: 0;
-    margin-bottom: .5em;
+    margin-top: 31.920px;
+    margin-bottom: 1.5em;
     font-size: 1.5em;
     font-weight: 300;
 } 
@@ -382,7 +383,7 @@ visibility: hidden !important;
 
 .filtri h2 {
 
-    margin-bottom: 4.5em;
+    margin-bottom: 1.5em;
 }
 
 .risultati {
@@ -404,7 +405,7 @@ visibility: hidden !important;
 
 .edificio, .piano, .aula {
 
-    flex-basis: 8em;
+    flex-basis: 15em;
 }
 
 .btn_container {
@@ -422,6 +423,7 @@ visibility: hidden !important;
     border: 0;
     width: 7em;
     height: 2.5em;
+    font-size: 1.5em;
     background: white;
     border-radius: 2px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -433,6 +435,7 @@ visibility: hidden !important;
     border: 0;
     width: 7em;
     height: 2.5em;
+    font-size: 1.5em;
     background: white;
     border-radius: 2px;
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
@@ -597,9 +600,54 @@ button:hover, .btn_aula:hover{
 
 /* PAGE RESIZE*/
 @media all and (max-width: 35em) {
+    
+    .risultati, .filtri {
+    
+        width: 95%;
+    }
+        
+    .rooms_table {
+    
+        width: 95%;
+    }
 
-    .rooms_table th:nth-child(2), th:nth-child(3), td:nth-child(2), td:nth-child(3){
+    .rooms_table th:nth-child(2), .rooms_table th:nth-child(3), .rooms_table td:nth-child(2), .rooms_table td:nth-child(3){
 
         display: none;
+    }
+    
+    .search_panel {
+    
+        height: 100%;
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .search_panel h2 {
+    
+        margin-bottom: 0;
+    }
+    
+    .filters_container {
+    
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+    }
+    
+    .btn_container {
+    
+        flex-direction: row;
+    }
+    
+    .edificio, .piano, .aula {
+
+    flex-basis: 10em;
+    }
+    
+    
+    .filtri button,  .btn_aula {
+    
+        font-size: 1em;
     }
 }

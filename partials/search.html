@@ -22,9 +22,9 @@
                     <button type="button" class="btn_piano" ng-click="selectFloor('all')">Qualsiasi</button>
                 </div>
             </div>
-            <div class="aula btn_container">
+            <div class="aula">
                 <h3>Aula</h3>
-                <div>
+                <div class="btn_container">
                     <select ng-model="selectedRoom" ng-init="selectedRoom='all'" class="btn_aula" name="aula">
                         <option value='all'>Qualsiasi</option>
                         <option ng-repeat="n in roomNumbers" value="{{n}}" ng-repeat-end>{{n}}</option>
