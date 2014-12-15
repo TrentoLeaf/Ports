@@ -31,6 +31,14 @@
                     </select>
                 </div>
             </div>
+            <div class="aula">
+                <h3>Corrente</h3>
+                <div class="btn_piano btn_container">
+                    <button type="button" class="btn_piano" ng-click="selectPower(true)">Power</button>
+                    <button type="button" class="btn_piano" ng-click="selectPower(false)">No Power</button>
+                    <button type="button" class="btn_piano" ng-click="selectPower('all')">Qualsiasi</button>
+                </div>
+            </div>
     </div>
     </div>
 
@@ -64,7 +72,7 @@
                 </thead>
 
                 <tbody>
-                    <tr ng-repeat="room in rooms | orderBy:order:reverse | myfilter:building:floor:selectedRoom">
+                    <tr ng-repeat="room in rooms | orderBy:order:reverse | myfilter:building:floor:selectedRoom:power">
                         <td class="{{room.class}}"><h4><a href="#/details/{{room.number}}">{{room.number}}</a></h4></td>
                         <td class="{{room.class}}"><h4>Povo {{room.building}}</h4></td>
                         <td class="{{room.class}}"><h4>{{room.floor}}</h4></td>
