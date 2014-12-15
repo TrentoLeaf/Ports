@@ -12,6 +12,20 @@
    height="100%"
    viewBox="0 0 8235.9797 10957.249"
    id="fileSVGP2PT">
+  <metadata
+     id="metadata253">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs251" />
   <rect
      width="624.06671"
      height="1022.1864"
@@ -1408,7 +1422,7 @@
      y2="24.528702"
      id="line482" />
   <polygon
-     points="18543,6408 18543,24252 12572,24252 12572,26419 1183,26419 1183,3290 12766,3290 12766,6408 "
+     points="18543,24252 12572,24252 12572,26419 1183,26419 1183,3290 12766,3290 12766,6408 18543,6408 "
      transform="matrix(0.47170562,0,0,0.47170562,-534.44247,-1528.3266)"
      id="polygon6"
      style="fill:none;stroke:#1a1a1a;stroke-width:100;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none" />
@@ -1500,4 +1514,13 @@
        y="10336.073"
        id="tspan3204-5-7-8"
        style="font-size:266.25170898px;font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:center;text-anchor:middle;font-family:Lato">B105</tspan></text>
+  <text
+     x="3829.5811"
+     y="10955.799"
+     id="text3230"
+     xml:space="preserve"
+     style="font-size:62.91966248px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Lato"><tspan
+       x="3829.5811"
+       y="10955.799"
+       id="tspan3232">Created by Andrea Zorzi</tspan></text>
 </svg>
