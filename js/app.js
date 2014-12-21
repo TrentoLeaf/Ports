@@ -6,7 +6,8 @@
     app.config([ '$routeProvider', function($routeProvider) {
         $routeProvider.when('/list', {
             templateUrl : 'partials/list.html',
-            controller: 'ListController'
+            controller: 'ListController',
+            controllerAs: 'ctrl'
         }).when('/details/:number/', {
             templateUrl : 'partials/details.html',
             controller: 'DetailsController'
