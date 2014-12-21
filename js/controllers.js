@@ -11,12 +11,22 @@
         }
 
         // custom filter
-        $scope.isFree = function(value) {
+        this.isFree = function(value) {
             return (value.availability !== 0);
         };
 
-        $scope.order = 'availability';
-        $scope.reverse = true;
+        this.order = 'availability';
+        this.reverse = true;
+
+        this.setOrder = function(order) {
+            if(this.order === order) {
+                this.reverse = !this.reverse;
+            } else {
+                this.reverse = false;
+                this.order = order;
+            }
+        };
+
     }]);
 })();
 

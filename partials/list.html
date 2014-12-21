@@ -25,12 +25,14 @@
         </ul>
     </div>
 
-    <div class="hide">
+    <div class="">
         <div>
             <p>currentDate = {{currentDate | date: 'EEEE - dd-MM-yyyy - HH:mm'}}</p>
             <p>queryDate = {{queryDate | date: 'EEEE - dd-MM-yyyy - HH:mm'}}</p>
             <p>loading = {{loading}}</p>
-            <p>error = {{error}}</p>
+            <p>reverse = {{reverse}}</p>
+            <p>this.order = {{ctrl.order}}</p>
+            <p>this.reverse = {{ctrl.reverse}}</p>
         </div>
     </div>
 
@@ -40,20 +42,20 @@
     <table ng-hide="loading" class="rooms_table">
         <thead>
             <tr>
-                <th><h4><a href="" ng-click="order = 'room'; reverse=!reverse">AULA<img src="../img/caret_up-down.png"/></a></h4> </th>
-                <th><h4><a href="" ng-click="order = 'building'; reverse=!reverse">EDIFICIO<img src="../img/caret_up-down.png"/></a></h4></th>
-                <th><h4><a href="" ng-click="order = 'floor'; reverse=!reverse">PIANO<img src="../img/caret_up-down.png"/></a></h4></th>
-                <th><h4><a href="" ng-click="order = 'availability'; reverse=!reverse">DISPONIBILITÀ<img src="../img/caret_up-down.png"/></a></h4></th>
+                <th><h4><a href="" ng-click="ctrl.setOrder('number')">AULA<img src="../img/caret_up-down.png"/></a></h4> </th>
+                <th><h4><a href="" ng-click="ctrl.setOrder('building')">EDIFICIO<img src="../img/caret_up-down.png"/></a></h4></th>
+                <th><h4><a href="" ng-click="ctrl.setOrder('floor')">PIANO<img src="../img/caret_up-down.png"/></a></h4></th>
+                <th><h4><a href="" ng-click="ctrl.setOrder('availability')">DISPONIBILITÀ<img src="../img/caret_up-down.png"/></a></h4></th>
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="room in rooms | orderBy:order:reverse | filter: isFree">
+            <tr ng-repeat="room in rooms | orderBy:ctrl.order:ctrl.reverse | filter: isFree">
                 <td class="{{room.class}}"><h4><a href="#/details/{{room.number}}">{{room.number}}</a></h4></td>
                 <td class="{{room.class}}"><h4>Povo {{room.building}}</h4></td>
                 <td class="{{room.class}}"><h4>{{room.floor}}</h4></td>
-                <td class="{{room.class}}"><h4>{{room.free ? 'all day' : (room.availability == 1 ?  "< 1 ora" : room.availability + ' ore') }}</h4></td>
-                    </tr>
-                    </tbody>
-                    </table>
+                <td class="{{room.class}}"><h4>{{room.free ? 'all day' : (room.availability == 1 ?  "&lt; 1 ora" : room.availability + ' ore') }}</h4></td>
+            </tr>
+        </tbody>
+    </table>
 
-                    </div>
+</div>
