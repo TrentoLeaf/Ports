@@ -7,13 +7,15 @@
 
         /* @now in secondi! */
         this.retrieve = function() {
+            // var currentDate = new Date(1417687200010),
             var currentDate = new Date(),
-                queryDate = new Date();
+                queryDate = new Date(currentDate);
 
             DateUtilities.nextOpenDay(queryDate);
-            var now = queryDate.getTime() / 1000;
+            var now = queryDate.getTime();
 
-            var baseUrl = 'http://studyspaces-unitn.tk/api/roomStatus.json?timestamp=', callback = '&callback=JSON_CALLBACK',
+            var baseUrl = '//trentoleaf-api.herokuapp.com/legacy?timestamp=',
+                callback = '&callback=JSON_CALLBACK',
                 requests = [],
                 nRequests = 13,
                 data = [];
@@ -23,7 +25,7 @@
 
             // calculate requests timestamp
             for(var i = 0; i < nRequests; i++) {
-                var time = now + 60*60*i;    // richieste ogni ora
+                var time = now + 1000*60*60*i;    // richieste ogni ora
                 requests.push($http.jsonp(baseUrl + time + callback, {cache: true}));
             }
 
