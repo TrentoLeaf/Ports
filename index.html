@@ -60,10 +60,10 @@
                 <!-- Mobile nav button -->
 
                 <!-- Title and Logo -->
-                <a class="logo" href="#/">
+                <a class="logo" href="#home">
                     <img alt="Ports Logo" src="img/leaf_logo.png">
                 </a>
-                <a class="ports" href="#/">
+                <a class="ports" href="#home">
                     <!--NB: non ci devono essere spazi tra gli span-->
                     <span class="">P</span><span class="ports-minimize">ovo&nbsp</span><span class="">O</span><span class="ports-minimize">ffer&nbsp</span><span class="">R</span><span class="ports-minimize">ooms&nbsp</span><span class="">T</span><span class="ports-minimize">o&nbsp</span><span class="">S</span><span class="ports-minimize">tudy&nbsp</span>
                 </a>
@@ -73,32 +73,32 @@
             <div class="navbar_rcontainer clearfix">
                 <ul class="navbar_list clearfix">
                     <li class="navbar_listit elen">
-                        <a href="#/">
-                            <a class="navbar_listit_a" href="#/list">
+                        <a href="#list">
+                            <a class="navbar_listit_a" href="#list">
                                 <img class="navbar_icon" alt="elenco" src="img/navbar_icons/mono_black/list.png">
                                 <div class="navbar_text">Elenco</div>
                             </a>
                         </a>
                     </li>
                     <li class="navbar_listit map">
-                        <a href="#/map">
-                            <a class="navbar_listit_a" href="#/map">
+                        <a href="#map">
+                            <a class="navbar_listit_a" href="#map">
                                 <img class="navbar_icon" alt="mappa" src="img/navbar_icons/mono_black/map.png">
                                 <div class="navbar_text">Mappa</div>
                             </a>
                         </a>
                     </li>
                     <li class="navbar_listit search">
-                        <a href="#/search">
-                            <a class="navbar_listit_a" href="#/search">
+                        <a href="#search">
+                            <a class="navbar_listit_a" href="#search">
                                 <img class="navbar_icon" alt="cerca" src="img/navbar_icons/mono_black/magnifier.png">
                                 <div class="navbar_text">Ricerca Avanzata</div>
                             </a>
                         </a>
                     </li>
                     <li class="navbar_listit time">
-                        <a href="#/timetable">
-                            <a class="navbar_listit_a" href="#/timetable">
+                        <a href="#timetable">
+                            <a class="navbar_listit_a" href="#timetable">
                                 <img class="navbar_icon" alt="orari" src="img/navbar_icons/mono_black/clock.png">
                                 <div class="navbar_text">Orari Strutture</div>
                             </a>
@@ -110,32 +110,32 @@
                 <div class="mobileMenu hide">
                     <ul>
                         <li class="navbar_listit elen">
-                            <a href="#/">
-                                <a class="navbar_listit_a" href="#/">
+                            <a href="#">
+                                <a class="navbar_listit_a" href="#">
                                     <img class="navbar_icon" alt="elenco" src="img/navbar_icons/mono_black/list.png">
                                     <div class="navbar_text">Elenco</div>
                                 </a>
                             </a>
                         </li>
                         <li class="navbar_listit map">
-                            <a href="#/map">
-                                <a class="navbar_listit_a" href="#/map">
+                            <a href="#map">
+                                <a class="navbar_listit_a" href="#map">
                                     <img class="navbar_icon" alt="mappa" src="img/navbar_icons/mono_black/map.png">
                                     <div class="navbar_text">Mappa</div>
                                 </a>
                             </a>
                         </li>
                         <li class="navbar_listit search">
-                            <a href="#/search">
-                                <a class="navbar_listit_a" href="#/search">
+                            <a href="#search">
+                                <a class="navbar_listit_a" href="#search">
                                     <img class="navbar_icon" alt="cerca" src="img/navbar_icons/mono_black/magnifier.png">
                                     <div class="navbar_text">Ricerca Avanzata</div>
                                 </a>
                             </a>
                         </li>
                         <li class="navbar_listit time">
-                            <a href="#/timetable">
-                                <a class="navbar_listit_a" href="#/timetable">
+                            <a href="#timetable">
+                                <a class="navbar_listit_a" href="#timetable">
                                     <img class="navbar_icon" alt="orari" src="img/navbar_icons/mono_black/clock.png">
                                     <div class="navbar_text">Orari Strutture</div>
                                 </a>
@@ -152,14 +152,14 @@
         </navbar>
 
         <!-- Contenuto dinamico -->
-        <div load class="content ">
+        <div load class="content" ng-controller="CacheController as cacheCtrl">
             <div ng-view></div>
         </div>
 
         <!--Footer-->
         <footer class="credits">
             <div class="credits_container">
-                <p class="text-center">Handmade in Italy by <a href="#/about">TrentoLeaf+© - Chi Siamo</a>.</p>
+                <p class="text-center">Handmade in Italy by <a href="#about">TrentoLeaf+© - Chi Siamo</a>.</p>
             </div>
         </footer>
 
