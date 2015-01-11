@@ -26,8 +26,8 @@
                 </thead>
                 <tbody>
                     <tr ng-repeat="s in states track by $index">
-                        <td class="{{s == 'free' ? 'green' : 'red'}}">{{$index + 7}} - {{$index + 8}}</td>
-                        <td class="{{s == 'free' ? 'green' : 'red'}}">{{(s == 'free' ? 'Libera' : 'Occupata')}}</td>
+                        <td class="{{s ? 'green' : 'red'}}">{{$index + 7}} - {{$index + 8}}</td>
+                        <td class="{{s ? 'green' : 'red'}}">{{(s ? 'Libera' : 'Occupata')}}</td>
                     </tr>
                 </tbody>
             </table>
