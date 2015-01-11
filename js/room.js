@@ -25,7 +25,7 @@ Room.prototype.calculateAvaiability = function(queryTime, currentTime) {
 
     // calcolo disponibilità da quest'ora
     for(var i = diff; i < this.states.length; i++) {
-        if(this.states[i] == 'free') {
+        if(this.states[i]) {
             this.availability += 1;
         } else {
             break;
