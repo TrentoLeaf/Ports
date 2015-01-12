@@ -13,8 +13,8 @@
             DateUtilities.nextOpenDay(queryDate);
             var now = queryDate.getTime();
 
-            // var baseUrl = 'http://localhost:8080/portsAPI/app?time=',
-            var baseUrl = 'http://api.trentoleaf.tk/app?time=',
+            // var baseUrl = 'http://localhost:8080/portsAPI/app/pro?time=',
+            var baseUrl = 'http://api.trentoleaf.tk/app/pro?time=',
                 requests = [],
                 data = [];
 
@@ -76,7 +76,7 @@
                     var room = new Room(extras[i].room);
 
                     room.setExtras(extras[i]);
-                    room.states = result[room.number];
+                    room.states = result[room.number.toLowerCase()];
                     room.calculateAvaiability(queryDate, currentDate);
                     room.setFree(13);
 
