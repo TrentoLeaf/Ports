@@ -13,8 +13,8 @@
             DateUtilities.nextOpenDay(queryDate);
             var now = queryDate.getTime();
 
-            // var baseUrl = 'http://localhost:8080/portsAPI/app/pro?time=',
-            var baseUrl = 'http://api.trentoleaf.tk/app/pro?time=',
+            // var baseUrl = 'http://localhost:8080/portsAPI/app?time=',
+            var baseUrl = 'http://api.trentoleaf.tk/app?time=',
                 requests = [],
                 data = [];
 
