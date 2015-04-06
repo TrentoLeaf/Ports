@@ -55,6 +55,14 @@
         $rootScope.$on('$viewContentLoaded', track);
     }]);
 
+    app.directive('legend', function() {
+        return {
+            restrict: 'E',
+            templateUrl: '../partials/legend.html',
+            replace: true
+        }
+    });
+
     app.directive('load', [ '$log', function($log) {
         return {
             restrict: 'A',
