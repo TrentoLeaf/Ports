@@ -1,6 +1,6 @@
 CACHE MANIFEST
-# v7
-# 06/04/2015 17:41
+# v8
+# 06/04/2015 17:49
 
 CACHE:
 index.html
@@ -29,14 +29,15 @@ js/script.js
 js/date.js
 js/room.js
 
-img/profilo/davide.jpg
-img/profilo/andrea.jpg
-img/profilo/stefano.jpg
-img/profilo/matteo.jpg
-img/profilo/samuel.jpg
-img/profilo/williams.jpg
-img/profilo/luca.jpg
-# img/group_image.png
+img/about/davide.jpg
+img/about/andrea.jpg
+img/about/stefano.jpg
+img/about/matteo.jpg
+img/about/samuel.jpg
+img/about/williams.jpg
+img/about/luca.jpg
+# img/about/group.jpg
+
 img/png/list.png
 img/png/map2.png
 img/png/magnifier.png
