@@ -1,6 +1,6 @@
 CACHE MANIFEST
-# v8
-# 06/04/2015 17:49
+# v9
+# 06/04/2015 17:58
 
 CACHE:
 index.html
@@ -38,6 +38,15 @@ img/about/williams.jpg
 img/about/luca.jpg
 # img/about/group.jpg
 
+img/class_icons/dim_large.png
+img/class_icons/card.png
+img/class_icons/plug.png
+img/class_icons/dim_small.png
+img/class_icons/dim_extralarge.png
+img/class_icons/dim_medium.png
+img/class_icons/dim_extrasmall.png
+img/class_icons/pc_class.png
+
 img/png/list.png
 img/png/map2.png
 img/png/magnifier.png
@@ -65,14 +74,7 @@ img/mappe/Povo1P1.svg
 img/mappe/Povo2P1.svg
 img/mappe/Povo1PT.svg
 img/mappe/Povo2PT.svg
-img/class_icons/dim_large.png
-img/class_icons/card.png
-img/class_icons/plug.png
-img/class_icons/dim_small.png
-img/class_icons/dim_extralarge.png
-img/class_icons/dim_medium.png
-img/class_icons/dim_extrasmall.png
-img/class_icons/pc_class.png
+
 img/leaf_logo.png
 img/favicon.ico
 img/caret_up-down.png
