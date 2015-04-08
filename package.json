@@ -1,0 +1,24 @@
+{
+  "name": "TrentoLeaf_Ports",
+  "version": "2.0.0",
+  "homepage": "https://github.com/TrentoLeaf/Ports",
+  "authors": [
+    "Andrea Zorzi",
+    "Davide Pedranz <davide.pedranz@gmail.com>",
+    "Luca Alberigo",
+    "Matteo Zeni",
+    "Samuel Giacomelli",
+    "Stefano Eccher",
+    "Williams Rizzi"
+  ],
+  "description": "Povo Offers Rooms To Study",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "0.4.5",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "0.5.1",
+    "grunt-contrib-cssmin": "0.12.2",
+    "grunt-contrib-uglify": "0.9.1"
+  },
+  "main": "Gruntfile.js"
+}
