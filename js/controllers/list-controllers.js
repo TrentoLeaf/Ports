@@ -1,13 +1,7 @@
 (function() {
     'use strict';
 
-    var listModule = angular.module('listModule', [ 'serviceModule' ]);
-    listModule.controller('ListController', [ '$scope', function($scope) {
-
-        // in caso di errore reindirizza alla pagina di errore
-        if($scope.error) {
-            window.location.href = '/#/error';
-        }
+    angular.module('listModule', [ 'serviceModule' ]).controller('ListController', [ '$scope', function($scope) {
 
         // custom filter
         this.isFree = function(value) {
