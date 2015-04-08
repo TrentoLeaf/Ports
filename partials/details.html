@@ -1,7 +1,7 @@
 <div class="detail-panel">
 
     <div class="panel-heading aula-title">
-        <h2>Aula {{number}}</h2>
+        <h2>Aula {{ctrl.number}}</h2>
 
         <div>
             <img class="icon" ng-show="room.size == 'tiny'" src="../img/class_icons/dim_extrasmall.png" alt="small"/>
@@ -25,7 +25,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr ng-repeat="s in states track by $index">
+                    <tr ng-repeat="s in ctrl.states track by $index">
                         <td class="{{s ? 'green' : 'red'}}">{{$index + 7}} - {{$index + 8}}</td>
                         <td class="{{s ? 'green' : 'red'}}">{{(s ? 'Libera' : 'Occupata')}}</td>
                     </tr>

@@ -5,31 +5,34 @@
 
     // handles routes
     app.config([ '$routeProvider', function($routeProvider) {
-        $routeProvider.when('/list', {
-            templateUrl : 'partials/list.html',
+        $routeProvider.when('/', {
+            redirectTo: '/list'
+        }).when('/home', {
+            redirectTo: '/list'
+        }).when('/list', {
+            templateUrl: 'partials/list.html',
             controller: 'ListController',
             controllerAs: 'ctrl'
         }).when('/details/:number/', {
-            templateUrl : 'partials/details.html',
-            controller: 'DetailsController'
-        }).when('/details/:number/map', {
-            templateUrl : 'partials/room-map.html',
-            controller: 'DetailsController'
+            templateUrl: 'partials/details.html',
+            controller: 'DetailsController',
+            controllerAs: 'ctrl'
         }).when('/map', {
-            templateUrl : 'partials/map.html',
+            templateUrl: 'partials/map.html',
             controller: 'MapController'
         }).when('/search', {
-            templateUrl : 'partials/search.html',
+            templateUrl: 'partials/search.html',
             controller: 'SearchController'
         }).when('/timetable', {
-            templateUrl : 'partials/timetable.html'
+            templateUrl: 'partials/timetable.html'
         }).when('/about', {
-            templateUrl : 'partials/about.html'
+            templateUrl: 'partials/about.html'
         }).when('/error', {
-            templateUrl : 'partials/error.html',
-            controller: 'ErrorController'
+            templateUrl: 'partials/error.html',
+            controller: 'ErrorController',
+            controllerAs: 'ctrl'
         }).otherwise({
-            redirectTo : '/list'
+            redirectTo: '/error'
         });
     } ]);
 

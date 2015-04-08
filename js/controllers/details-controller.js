@@ -1,16 +1,15 @@
 (function() {
     'use strict';
 
-    angular.module('detailsModule', []).controller('DetailsController', ['$scope', '$routeParams', '$log', function($scope, $routeParams, $log) {
+    angular.module('detailsModule', []).controller('DetailsController', ['$scope', '$routeParams', '$log', '$location', function($scope, $routeParams, $log, $location) {
 
-        // in caso di errore reindirizza alla pagina di errore
-        if($scope.error) {
-            window.location.href = '/#/error';
-        }
+        // save reference to the controller
+        var ctrl = this;
 
         // save search parameters
         $scope.number = $routeParams.number;
 
+        // function to be called when the page is loaded
         var elaborate = function() {
 
             // search index of array
@@ -21,56 +20,52 @@
                 }
             }
 
-            if(index == undefined) {
-                $scope.notFound = true;
+            // check if the room number is valid
+            if (index == undefined) {
+                $location.path('error');
             } else {
-                $scope.states = $scope.rooms[index].states;
-                $log.info($scope.states);
 
-                $scope.room = $scope.rooms[index];
-                $log.info($scope.room);
-            }
+                ctrl.room = $scope.rooms[index];
+                ctrl.states = ctrl.room.states;
 
-            //mappa dettagli aula
-            var map_source=null;
-            var heading_map= null;
+                // mappa dettagli aula
+                var map_source = null;
+                var heading_map = null;
 
-            if ($scope.rooms[index].building=="1") {
-                if ($scope.rooms[index].floor=="-1") {
-                    map_source="../img/mappe/Povo1PT.svg";
-                    heading_map="Povo1 - Piano Terra";
-
+                if (ctrl.room.building=="1") {
+                    if (ctrl.room.floor=="-1") {
+                        map_source="../img/mappe/Povo1PT.svg";
+                        heading_map="Povo1 - Piano Terra";
+                    }
+                    else if (ctrl.room.floor=="0") {
+                        map_source="../img/mappe/Povo1P1.svg";
+                        heading_map="Povo1 - Primo Piano";
+                    }
                 }
-                else if ($scope.rooms[index].floor=="0") {
-                    map_source="../img/mappe/Povo1P1.svg";
-                    heading_map="Povo1 - Primo Piano";
+                else if (ctrl.room.building=="2") {
+                    if (ctrl.room.floor=="-1") {
+                        map_source="../img/mappe/Povo2PT.svg";
+                        heading_map="Povo2 - Piano Terra";
 
-                }
-            }
-            else if ($scope.rooms[index].building=="2") {
-                if ($scope.rooms[index].floor=="-1") {
-                    map_source="../img/mappe/Povo2PT.svg";
-                    heading_map="Povo2 - Piano Terra";
-
-                }
-                else if ($scope.rooms[index].floor=="0") {
-                    map_source="../img/mappe/Povo2P1.svg";
-                    heading_map="Povo2 - Primo Piano";
+                    }
+                    else if (ctrl.room.floor=="0") {
+                        map_source="../img/mappe/Povo2P1.svg";
+                        heading_map="Povo2 - Primo Piano";
+                    }
                 }
 
-            }
+                $(".map_detail-heading").text(heading_map);
 
-            $(".map_detail-heading").text(heading_map);
-
-            if (map_source!=null) {
-                var s = Snap("#map_detail");
-                Snap.load(map_source, onSVGLoaded ) ;
-            }
-            function onSVGLoaded( data ){
-                var rectID= "#"+($scope.rooms[index].number).toLowerCase();
-                var rect = data.select(rectID);
-                rect.attr("fill", "#42A5F5");
-                s.append( data );
+                if (map_source != null) {
+                    var s = Snap("#map_detail");
+                    Snap.load(map_source, onSVGLoaded ) ;
+                }
+                function onSVGLoaded( data ){
+                    var rectID= "#"+($scope.rooms[index].number).toLowerCase();
+                    var rect = data.select(rectID);
+                    rect.attr("fill", "#42A5F5");
+                    s.append( data );
+                }
             }
         }
 
