@@ -13,13 +13,13 @@
             templateUrl: 'partials/list.html',
             controller: 'ListController',
             controllerAs: 'ctrl'
-        }).when('/details/:number/', {
-            templateUrl: 'partials/details.html',
-            controller: 'DetailsController',
-            controllerAs: 'ctrl'
         }).when('/map', {
             templateUrl: 'partials/map.html',
             controller: 'MapController'
+        }).when('/details/:number', {
+            templateUrl: 'partials/details.html',
+            controller: 'DetailsController',
+            controllerAs: 'ctrl'
         }).when('/search', {
             templateUrl: 'partials/search.html',
             controller: 'SearchController'

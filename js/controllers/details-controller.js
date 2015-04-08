@@ -25,56 +25,55 @@
                 $location.path('error');
             } else {
 
+                // make this room accessible from the html
                 ctrl.room = $scope.rooms[index];
                 ctrl.states = ctrl.room.states;
 
-                // mappa dettagli aula
+                // map -> room location
                 var map_source = null;
-                var heading_map = null;
+                ctrl.heading = null;
 
-                if (ctrl.room.building=="1") {
-                    if (ctrl.room.floor=="-1") {
+                // load correct map
+                if (ctrl.room.building === 1) {
+                    if (ctrl.room.floor === -1) {
                         map_source="../img/mappe/Povo1PT.svg";
-                        heading_map="Povo1 - Piano Terra";
-                    }
-                    else if (ctrl.room.floor=="0") {
+                        ctrl.heading="Povo1 - Piano Terra";
+                    } else if (ctrl.room.floor === 0) {
                         map_source="../img/mappe/Povo1P1.svg";
-                        heading_map="Povo1 - Primo Piano";
+                        ctrl.heading="Povo1 - Primo Piano";
                     }
-                }
-                else if (ctrl.room.building=="2") {
-                    if (ctrl.room.floor=="-1") {
+                } else if (ctrl.room.building === 2) {
+                    if (ctrl.room.floor === -1) {
                         map_source="../img/mappe/Povo2PT.svg";
-                        heading_map="Povo2 - Piano Terra";
-
-                    }
-                    else if (ctrl.room.floor=="0") {
+                        ctrl.heading="Povo2 - Piano Terra";
+                    } else if (ctrl.room.floor === 0) {
                         map_source="../img/mappe/Povo2P1.svg";
-                        heading_map="Povo2 - Primo Piano";
+                        ctrl.heading="Povo2 - Primo Piano";
                     }
                 }
 
-                $(".map_detail-heading").text(heading_map);
-
+                // load map
                 if (map_source != null) {
                     var s = Snap("#map_detail");
-                    Snap.load(map_source, onSVGLoaded ) ;
+                    Snap.load(map_source, onSVGLoaded) ;
                 }
+
+                // function to load a SVG
                 function onSVGLoaded( data ){
-                    var rectID= "#"+($scope.rooms[index].number).toLowerCase();
+                    var rectID= "#"+(ctrl.room.number).toLowerCase();
                     var rect = data.select(rectID);
                     rect.attr("fill", "#42A5F5");
                     s.append( data );
                 }
+
             }
         }
 
-        // aspetta che vengano caricati i dati... appena pronti, chiama elaborate
+        // wait for data to load
         if($scope.loading) {
-            $log.warn("Data loadng... WAIT!");
+            $log.debug("Data loadng...");
 
             $scope.$watch('loading', function(newValue, oldValue) {
-
                 if(!newValue && oldValue) {
                     $log.info("Data loaded!");
                     elaborate();
