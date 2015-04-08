@@ -7,7 +7,7 @@
         var ctrl = this;
 
         // save search parameters
-        $scope.number = $routeParams.number;
+        ctrl.number = $routeParams.number;
 
         // function to be called when the page is loaded
         var elaborate = function() {
@@ -15,7 +15,7 @@
             // search index of array
             var index = undefined;
             for(var i = 0, rooms = $scope.rooms, len = rooms.length; i < len; i++) {
-                if(rooms[i].number == $scope.number) {
+                if(rooms[i].number == ctrl.number) {
                     index = i;
                 }
             }
