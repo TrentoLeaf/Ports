@@ -8,6 +8,8 @@ var colRed = "#EF5350";
 var colBlue = "#42A5F5";
 var lastFill=null;
 
+
+
 (function() {
     var mapModule = angular.module('mapModule', []);
 
@@ -15,7 +17,7 @@ var lastFill=null;
 
         // in caso di errore reindirizza alla pagina di errore
         if($scope.error) {
-           window.location.href = '/#/error';
+            window.location.href = '/#/error';
         }
 
         var elabotate = function(array) {
@@ -47,6 +49,7 @@ var lastFill=null;
             // funzione di gestione colorazione + append mappe
 
             function gestisciOggetti (data) {
+
                 for(var i = 0, len = array.length; i < len; i++) {
 
                     var className=array[i].number;
@@ -93,7 +96,7 @@ var lastFill=null;
                             label.attr('fill', "#lalala");
                         }
 
-                         label.attr('cursor', "pointer");
+                        label.attr('cursor', "pointer");
 
                         //hover
                         rect.hover(function() {
@@ -104,9 +107,8 @@ var lastFill=null;
                                    function() {
                             this.attr('fill', lastFill);
                             lastFill= null;
-                            //this.transform( 's1,1');
+                            // this.transform( 's1,1');
                         });
-
 
                         //link ai dettagli di un aula
                         rect.click(function() {
@@ -114,13 +116,21 @@ var lastFill=null;
                             location.href = "#/details/"+aula;
                         });
 
+                        //link ai dettagli di un aula
+                        rect.click(function() {
+                            var aula= (this.attr('id')).toUpperCase();
+                            location.href = "#/details/"+aula;
+                        });
+
+                        //link ai dettagli di un aula (cliccando sul label)
+                        label.click(function() {
+                            var aula = (this.attr('id').toUpperCase().substring(0, this.attr('id').length-1));
+                            location.href = "#/details/"+aula;
+                        });
                     }
                 }
             }
         };
-
-
-
 
         // aspetta che vengano caricati i dati... appena pronti, chiama elaborate
         if($scope.loading) {
