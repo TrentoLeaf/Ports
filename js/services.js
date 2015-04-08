@@ -6,14 +6,12 @@
 
         this.retrieve = function() {
 
-            // var currentDate = new Date(1417419000000),
             var currentDate = new Date(),
                 queryDate = new Date(currentDate);
 
             DateUtilities.nextOpenDay(queryDate);
             var now = queryDate.getTime();
 
-            // var baseUrl = 'http://localhost:8080/portsAPI/app?time=',
             var baseUrl = 'http://api.trentoleaf.tk/app?time=',
                 requests = [],
                 data = [];

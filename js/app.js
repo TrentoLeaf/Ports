@@ -1,8 +1,9 @@
-'use strict';
-
 (function() {
+    'use strict';
+
     var app = angular.module('ports', [ 'listModule', 'mapModule', 'searchModule', 'detailsModule', 'errorModule', 'ngRoute']);
 
+    // handles routes
     app.config([ '$routeProvider', function($routeProvider) {
         $routeProvider.when('/list', {
             templateUrl : 'partials/list.html',
@@ -32,13 +33,14 @@
         });
     } ]);
 
+    // handles manifest changes
     app.controller('CacheController', function() {
         // Check if a new cache is available on page load.
         window.addEventListener('load', function(e) {
             window.applicationCache.addEventListener('updateready', function(e) {
                 if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
                     // Browser downloaded a new app cache.
-                    if (confirm('A new version of this site is available. Load it?')) {
+                    if (confirm('È disponibile una nuova versione di TrentoLeaf+ PORTS. Vuoi caricarla ora?')) {
                         window.location.reload();
                     }
                 } else {
@@ -48,13 +50,15 @@
         }, false);
     });
 
-    app.run([ '$rootScope', '$window', '$location', '$log', function($rootScope, $window, $location, $log) {
+    // google analytics
+    app.run([ '$rootScope', '$window', '$location', function($rootScope, $window, $location) {
         var track = function() {
             $window.ga('send', 'pageview', { page: $location.path() });
         };
         $rootScope.$on('$viewContentLoaded', track);
     }]);
 
+    // legend directive
     app.directive('legend', function() {
         return {
             restrict: 'E',

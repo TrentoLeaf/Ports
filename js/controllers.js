@@ -1,6 +1,6 @@
-'use strict';
-
 (function() {
+    'use strict';
+
     var listModule = angular.module('listModule', [ 'serviceModule' ]);
 
     listModule.controller('ListController', [ 'DataService', '$scope', function(DataService, $scope) {
@@ -31,6 +31,8 @@
 })();
 
 (function() {
+    'use strict';
+
     var searchModule = angular.module('searchModule', []);
 
     searchModule.filter('myfilter', function() {
@@ -47,7 +49,7 @@
                             }
                         }
                     }
-               }
+                }
             }
 
             return filtered;
@@ -69,7 +71,7 @@
 
         $scope.building = 'all';
         $scope.floor = 'all';
-        
+
         $scope.power = true;
 
         $scope.selectBuilding = function(value) {
@@ -79,21 +81,21 @@
         $scope.selectFloor = function(value) {
             $scope.floor = value;
         };
-        
-         $scope.selectPower = function(value) {
+
+        $scope.selectPower = function(value) {
             $scope.power = value;
         };
-        
+
         var elaborate = function() {
             $log.warn("Elaborate");
             $log.warn($scope.rooms);
-            
+
             $scope.roomNumbers = [];
             for(var i = 0, len = $scope.rooms.length; i < len; i++) {
                 $scope.roomNumbers.push($scope.rooms[i].number);
             }
         }
-        
+
         // aspetta che vengano caricati i dati... appena pronti, chiama elaborate
         if($scope.loading) {
             $log.warn("Data loadng... WAIT!");
