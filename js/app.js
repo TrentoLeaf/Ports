@@ -43,11 +43,9 @@
             window.applicationCache.addEventListener('updateready', function(e) {
                 if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
                     // browser downloaded a new app cache
-                    if (confirm('È disponibile una nuova versione di TrentoLeaf+ PORTS. Vuoi caricarla ora?')) {
+                    if (confirm('È disponibile una nuova versione di Ports. Vuoi caricarla ora?')) {
                         window.location.reload();
                     }
-                } else {
-                    // manifest didn't changed...
                 }
             }, false);
         }, false);

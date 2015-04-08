@@ -1,9 +1,75 @@
 CACHE MANIFEST
-# v11 sdfddsafsdgdg
-# 08/04/2015 14:00
+# v12
+# 08/04/2015 21:00
 
 CACHE:
-# TODO
+
+# html files
+index.html
+partials/about.html
+partials/error.html
+partials/list.html
+partials/search.html
+partials/details.html
+partials/legend.html
+partials/map.html
+partials/timetable.html
+
+# css files
+css/about.css
+css/colors.css
+css/details.css
+css/error.css
+css/map.css
+css/navbar.css
+css/style.css
+
+# js files
+js/app.js
+js/navbar.js
+js/script.js
+js/controllers/details-controller.js
+js/controllers/list-controllers.js
+js/controllers/search-controller.js
+js/controllers/error-controller.js
+js/controllers/map-controller.js
+js/services/data-service.js
+js/utilities/date.js
+js/utilities/room.js
+
+# img files
+img/favicon.ico
+img/caret_up-down.png
+img/leaf_logo.png
+img/teapot.png
+img/class_icons/card.png
+img/class_icons/dim_extrasmall.png
+img/class_icons/dim_medium.png
+img/class_icons/pc_class.png
+img/class_icons/dim_extralarge.png
+img/class_icons/dim_large.png
+img/class_icons/dim_small.png
+img/class_icons/plug.png
+img/mappe/Povo1P1.svg
+img/mappe/Povo1PT.svg
+img/mappe/Povo2P1.svg
+img/mappe/Povo2PT.svg
+img/navbar_icons/minimizedNavbar.png
+img/navbar_icons/reverseMinNav.png
+img/navbar_icons/mono_black/clock.png
+img/navbar_icons/mono_black/list.png
+img/navbar_icons/mono_black/magnifier.png
+img/navbar_icons/mono_black/map.png
+      
+# libraries
+lib/jquery/dist/jquery.min.js
+lib/snap.svg/dist/snap.svg-min.js
+lib/angular/angular.min.js
+lib/angular-route/angular-route.min.js
+
+# fonts
+http://fonts.googleapis.com/css?family=Lato:300,400,700
+http://fonts.googleapis.com/css?family=Roboto
 
 NETWORK:
 *
