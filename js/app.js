@@ -33,29 +33,46 @@
         });
     } ]);
 
-    // handles manifest changes
-    app.controller('CacheController', function() {
-        // Check if a new cache is available on page load.
+    app.run([ '$rootScope', '$window', '$location', 'DataService', function($rootScope, $window, $location, DataService) {
+
+        // check if a new cache is available on page load
         window.addEventListener('load', function(e) {
             window.applicationCache.addEventListener('updateready', function(e) {
                 if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
-                    // Browser downloaded a new app cache.
+                    // browser downloaded a new app cache
                     if (confirm('È disponibile una nuova versione di TrentoLeaf+ PORTS. Vuoi caricarla ora?')) {
                         window.location.reload();
                     }
                 } else {
-                    // Manifest didn't changed. Nothing new to server.
+                    // manifest didn't changed...
                 }
             }, false);
         }, false);
-    });
 
-    // google analytics
-    app.run([ '$rootScope', '$window', '$location', function($rootScope, $window, $location) {
-        var track = function() {
+        // google analytics
+        $rootScope.$on('$viewContentLoaded', function() {
             $window.ga('send', 'pageview', { page: $location.path() });
-        };
-        $rootScope.$on('$viewContentLoaded', track);
+        });
+
+        // waiting for data...
+        $rootScope.loading = true;
+        $rootScope.rooms = [];
+
+        // load rooms json
+        DataService.retrieve().then(function(data) {
+            $rootScope.rooms = data.data;
+            $rootScope.queryDate = data.queryDate;
+            $rootScope.currentDate = data.currentDate;
+        }, function(error) {
+
+            // TODO...
+            $rootScope.error = true;
+            window.location.href = '#/error';
+
+        }).finally(function() {
+            $rootScope.loading = false;
+        });
+
     }]);
 
     // legend directive
@@ -67,33 +84,4 @@
         }
     });
 
-    app.directive('load', [ '$log', function($log) {
-        return {
-            restrict: 'A',
-            controller: function($scope, DataService) {
-
-                // parameters to load correctly data
-                $scope.loading = true;
-                $scope.error = false;
-
-                // array containing rooms data
-                $scope.rooms = [];
-
-                var promise = DataService.retrieve();
-                promise.then(function(data) {
-                    $scope.rooms = data.data;
-                    $scope.queryDate = data.queryDate;
-                    $scope.currentDate = data.currentDate;
-                }, function(error) {
-                    $scope.error = true;
-
-                    $log.info("Errore API...");
-                    window.location.href = '#/error';
-                }).finally(function() {
-                    $scope.loading = false;
-                });
-
-            }
-        };
-    }]);
 })();

@@ -135,9 +135,12 @@
             </div>
         </navbar>
 
-        <!-- Contenuto dinamico -->
-        <div load class="content" ng-controller="CacheController as cacheCtrl">
-            <div ng-view></div>
+        <!-- Dynamic content -->
+        <div class="content">
+            <div ng-show="loading">
+                <p>TODO... loading animation</p>
+            </div>
+            <div ng-hide="loading" ng-view></div>
             <noscript>Questa web app richiede JavaScript. Per favore, attiva JavaScript o passa a un browser moderno.</noscript>
         </div>
 
