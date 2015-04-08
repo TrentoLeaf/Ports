@@ -1,93 +1,9 @@
 CACHE MANIFEST
-# v10
-# 06/04/2015 18:58
+# v11 sdfddsafsdgdg
+# 08/04/2015 14:00
 
 CACHE:
-index.html
-partials/details.html
-partials/list.html
-partials/search.html
-partials/about.html
-partials/map.html
-partials/timetable.html
-partials/error.html
-
-css/style.css
-css/navbar.css
-css/colors.css
-css/details.css
-css/map.css
-css/error.css
-css/about.css
-
-js/navbar.js
-js/controllers.js
-js/services.js
-js/mapController.js
-js/app.js
-js/script.js
-js/date.js
-js/room.js
-
-img/about/davide.jpg
-img/about/andrea.jpg
-img/about/stefano.jpg
-img/about/matteo.jpg
-img/about/samuel.jpg
-img/about/williams.jpg
-img/about/luca.jpg
-# img/about/group.jpg
-
-img/class_icons/dim_large.png
-img/class_icons/card.png
-img/class_icons/plug.png
-img/class_icons/dim_small.png
-img/class_icons/dim_extralarge.png
-img/class_icons/dim_medium.png
-img/class_icons/dim_extrasmall.png
-img/class_icons/pc_class.png
-
-img/png/list.png
-img/png/map2.png
-img/png/magnifier.png
-img/png/University_Trento_logo.png
-img/png/clock.png
-img/png/map1.png
-img/navbar_icons/default/list.png
-img/navbar_icons/default/map2.png
-img/navbar_icons/default/magnifier.png
-img/navbar_icons/default/list2.png
-img/navbar_icons/default/clock2.png
-img/navbar_icons/default/clock.png
-img/navbar_icons/default/map.png
-img/navbar_icons/mono_white/list.png
-img/navbar_icons/mono_white/magnifier.png
-img/navbar_icons/mono_white/clock.png
-img/navbar_icons/mono_white/map.png
-img/navbar_icons/reverseMinNav.png
-img/navbar_icons/minimizedNavbar.png
-img/navbar_icons/mono_black/list.png
-img/navbar_icons/mono_black/magnifier.png
-img/navbar_icons/mono_black/clock.png
-img/navbar_icons/mono_black/map.png
-img/mappe/Povo1P1.svg
-img/mappe/Povo2P1.svg
-img/mappe/Povo1PT.svg
-img/mappe/Povo2PT.svg
-
-img/leaf_logo.png
-img/favicon.ico
-img/caret_up-down.png
-img/teapot.png
-
-# bin/ngProgress/ngProgress.css
-# bin/ngProgress/ngProgress.js
-bin/SnapSVG/snap.svg-min.js
-# bin/jQuery/jquery-2.1.0.min.js
-# bin/Angular/angular-route.min.js
-# bin/Angular/angular.min.js.map
-# bin/Angular/angular.min.js
-# bin/Angular/angular-route.min.js.map
+# TODO
 
 NETWORK:
 *
