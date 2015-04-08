@@ -57,12 +57,7 @@
                     map_source="../img/mappe/Povo2P1.svg";
                     heading_map="Povo2 - Primo Piano";
                 }
-                //if ($scope.rooms[index].number=="B106" || $scope.rooms[index].number=="B107") {
-                //    map_source="../img/mappe/Povo2P1.svg";
-                //}
-                //else {
-                //    map_source="../img/mappe/Povo2PT.svg";
-                //}
+
             }
 
             $(".map_detail-heading").text(heading_map);

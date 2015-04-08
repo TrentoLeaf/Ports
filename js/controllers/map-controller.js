@@ -1,21 +1,22 @@
-'use strict';
-
-var colDarkGreen = "#66BB6A"; // TODO!
-var colGreen = "#66BB6A";
-var colOrange = "orange";
-var colYellow = "#FFCA28";
-var colRed = "#EF5350";
-var colBlue = "#42A5F5";
-var lastFill=null;
-
 (function() {
+    'use strict';
+
+    var colDarkGreen = "#66BB6A"; // TODO!
+    var colGreen = "#66BB6A";
+    var colOrange = "orange";
+    var colYellow = "#FFCA28";
+    var colRed = "#EF5350";
+    var colBlue = "#42A5F5";
+    var lastFill=null;
+
+
     var mapModule = angular.module('mapModule', []);
 
     mapModule.controller('MapController', [ '$scope', '$log', function($scope, $log) {
 
         // in caso di errore reindirizza alla pagina di errore
         if($scope.error) {
-           window.location.href = '/#/error';
+            window.location.href = '/#/error';
         }
 
         var elabotate = function(array) {
@@ -93,7 +94,7 @@ var lastFill=null;
                             label.attr('fill', "#lalala");
                         }
 
-                         label.attr('cursor', "pointer");
+                        label.attr('cursor', "pointer");
 
                         //hover
                         rect.hover(function() {
@@ -118,9 +119,6 @@ var lastFill=null;
                 }
             }
         };
-
-
-
 
         // aspetta che vengano caricati i dati... appena pronti, chiama elaborate
         if($scope.loading) {

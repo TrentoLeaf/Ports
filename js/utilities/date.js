@@ -1,5 +1,5 @@
 DateUtilities = {
-    
+
     OPEN: 8,
     CLOSE: 20,
 
@@ -20,7 +20,7 @@ DateUtilities = {
             date.setHours(date.getHours() + 1);
         }
     },
-    
+
     nextOpenDay : function(date) {
         if(date.getHours() >= this.CLOSE) {
             this.addDay(date, 1);
