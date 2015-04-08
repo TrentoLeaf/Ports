@@ -18,6 +18,7 @@
     "unitn",
     "povo"
   ],
+  "private": true,
   "license": "MIT",
   "ignore": [
     "**/.*",
