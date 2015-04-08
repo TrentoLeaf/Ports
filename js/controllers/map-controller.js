@@ -1,5 +1,4 @@
 (function() {
-    'use strict';
 
     // TODO: colors...
     var colDarkGreen = "#66BB6A";

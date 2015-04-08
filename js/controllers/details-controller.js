@@ -1,6 +1,4 @@
 (function() {
-    'use strict';
-
     angular.module('detailsModule', []).controller('DetailsController', ['$scope', '$routeParams', '$log', '$location', function($scope, $routeParams, $log, $location) {
 
         // save reference to the controller
