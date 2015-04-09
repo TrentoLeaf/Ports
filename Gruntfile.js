@@ -34,11 +34,21 @@ module.exports = function (grunt) {
                 }
             }
         },
-        clean: ["dist/*"]
+        clean: ["dist/*"],
+        'gh-pages': {
+            options: {
+                base: '',
+                branch: 'test-grunt-gh-pages',
+                message: 'Site auto-published on gh-pages by Grunt',
+                push: false
+            },
+            src: ['index.html', 'partials/*', 'dist/*min*', 'img/*']
+        }
     });
     grunt.loadNpmTasks('grunt-contrib-concat');
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-clean');
+    grunt.loadNpmTasks('grunt-gh-pages');
     grunt.registerTask('default', ['clean', 'concat:css', 'cssmin:css', 'concat:js', 'uglify:js']);
 };
