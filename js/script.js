@@ -1,4 +1,7 @@
 $(document).ready(function(){
+    
+    /* Hamburger a scomparsa*/
+    $(".button-collapse").sideNav();
 
     /* Hover icone navbar */
     var changeColor = function(element, color) {

@@ -40,7 +40,7 @@ Room.prototype.calculateAvaiability = function(queryTime, currentTime) {
 
         case 1:
         case 2:
-            this.class = 'orange';
+            this.class = 'amber';
             break;
 
         case 3:
@@ -50,11 +50,11 @@ Room.prototype.calculateAvaiability = function(queryTime, currentTime) {
 
         case 5:
         case 6:
-            this.class = 'green';
+            this.class = 'light-green';
             break;
 
         default:
-            this.class = 'dark-green';
+            this.class = 'green';
     }
 };
 

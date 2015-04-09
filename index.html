@@ -20,29 +20,23 @@
         <link href='http://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
 
         <!-- Materialize -->
-        <!-- <link rel="stylesheet" href="lib/materialize/dist/css/materialize.min.css"> -->
-        <!-- TODO: materialize -->
+        <link rel="stylesheet" href="lib/materialize/dist/css/materialize.min.css">
 
         <!-- CSS -->
-        <link type="text/css" rel="stylesheet" href="css/style.css">
-        <link type="text/css" rel="stylesheet" href="css/about.css">
-        <link type="text/css" rel="stylesheet" href="css/colors.css">
-        <link type="text/css" rel="stylesheet" href="css/map.css">
-        <link type="text/css" rel="stylesheet" href="css/error.css">
-        <link type="text/css" rel="stylesheet" href="css/navbar.css">
-        <link type="text/css" rel="stylesheet" href="css/details.css">
+<!--        <link type="text/css" rel="stylesheet" href="css/style.css">-->
 
         <!-- JAVASCRIPT -->
         <script src="lib/jquery/dist/jquery.min.js"></script>
         <script src="lib/snap.svg/dist/snap.svg-min.js"></script>
         <script src="lib/angular/angular.min.js"></script>
         <script src="lib/angular-route/angular-route.min.js"></script>
+        <script src="lib/materialize/dist/js/materialize.min.js"></script>
 
         <!-- JAVASCRIPT -->
         <script src="js/script.js"></script>
         <script src="js/date.js"></script>
         <script src="js/room.js"></script>
-        <script src="js/navbar.js"></script>
+        <!--<script src="js/navbar.js"></script> -->
 
         <!--ANGULAR APP-->
         <script type="text/javascript" src="js/app.js"></script>
@@ -54,85 +48,70 @@
 
     <body>
         <!--Fixed Navbar WorkInProgress-->
-        <navbar class="navbar">
-            <div class="navbar_lcontainer">
-                <!-- Mobile nav button -->
-
-                <!-- Title and Logo -->
-                <a class="logo" href="#home">
-                    <img alt="Ports Logo" src="img/leaf_logo.png">
-                </a>
-                <a class="ports" href="#home">
-                    <!--NB: non ci devono essere spazi tra gli span-->
-                    <span class="">P</span><span class="ports-minimize">ovo&nbsp</span><span class="">O</span><span class="ports-minimize">ffers&nbsp</span><span class="">R</span><span class="ports-minimize">ooms&nbsp</span><span class="">T</span><span class="ports-minimize">o&nbsp</span><span class="">S</span><span class="ports-minimize">tudy&nbsp</span>
-                </a>
-            </div>
-
-            <!-- nav items -->
-            <div class="navbar_rcontainer clearfix">
-                <ul class="navbar_list clearfix">
-                    <li class="navbar_listit elen">
-                        <a class="navbar_listit_a" href="#list">
-                            <img class="navbar_icon" alt="elenco" src="img/navbar_icons/mono_black/list.png">
-                            <div class="navbar_text">Elenco</div>
+        <nav class="white">
+           <div class="nav-wrapper">
+                   
+                <a class="hide-on-med-and-down brand-logo black-text left" href="#home">Povo Offers Rooms To Study</a>
+                <a class="hide-on-large-only brand-logo black-text center" href="#home">PORTS</a>
+                <a href="#" data-activates="mobile-demo" class="button-collapse right"><i class="mdi-navigation-menu black-text"></i></a>
+            
+               <!-- nav items -->
+                <ul class="nav-mobile right hide-on-med-and-down">
+                    <li>
+                        <a class="black-text waves-effect waves-teal" href="#list">
+                           <i class="large mdi-action-view-day left"></i>
+                           List
                         </a>
                     </li>
-                    <li class="navbar_listit map">
-                        <a class="navbar_listit_a" href="#map">
-                            <img class="navbar_icon" alt="mappa" src="img/navbar_icons/mono_black/map.png">
-                            <div class="navbar_text">Mappa</div>
+                    <li>
+                        <a class="black-text waves-effect waves-teal" href="#map">
+                            <i class="large mdi-maps-map left"></i>
+                            Map
                         </a>
                     </li>
-                    <li class="navbar_listit search">
-                        <a class="navbar_listit_a" href="#search">
-                            <img class="navbar_icon" alt="cerca" src="img/navbar_icons/mono_black/magnifier.png">
-                            <div class="navbar_text">Ricerca Avanzata</div>
+                    <li>
+                        <a class="black-text waves-effect waves-teal" href="#search">
+                           <i class="large mdi-action-search left"></i>
+                           Search
                         </a>
                     </li>
-                    <li class="navbar_listit time">
-                        <a class="navbar_listit_a" href="#timetable">
-                            <img class="navbar_icon" alt="orari" src="img/navbar_icons/mono_black/clock.png">
-                            <div class="navbar_text">Orari Strutture</div>
+                    <li>
+                        <a class="black-text waves-effect waves-teal" href="#timetable">
+                            <i class="large mdi-action-schedule left"></i>
+                            Time
                         </a>
                     </li>
                 </ul>
-
-                <!-- Mobile menu -->
-                <div class="mobileMenu hide">
-                    <ul>
-                        <li class="navbar_listit elen">
-                            <a class="navbar_listit_a" href="#list">
-                                <img class="navbar_icon" alt="elenco" src="img/navbar_icons/mono_black/list.png">
-                                <div class="navbar_text">Elenco</div>
-                            </a>
-                        </li>
-                        <li class="navbar_listit map">
-                            <a class="navbar_listit_a" href="#map">
-                                <img class="navbar_icon" alt="mappa" src="img/navbar_icons/mono_black/map.png">
-                                <div class="navbar_text">Mappa</div>
-                            </a>
-                        </li>
-                        <li class="navbar_listit search">
-                            <a class="navbar_listit_a" href="#search">
-                                <img class="navbar_icon" alt="cerca" src="img/navbar_icons/mono_black/magnifier.png">
-                                <div class="navbar_text">Ricerca Avanzata</div>
-                            </a>
-                        </li>
-                        <li class="navbar_listit time">
-                            <a class="navbar_listit_a" href="#timetable">
-                                <img class="navbar_icon" alt="orari" src="img/navbar_icons/mono_black/clock.png">
-                                <div class="navbar_text">Orari Strutture</div>
-                            </a>
-                        </li>
-                    </ul>
+                
+                <!-- HAMBURGER -->
+                <ul class="side-nav collection" id="mobile-demo">
+                    <li class="collection-item">
+                        <a class="black-text waves-effect waves-teal" href="#list">
+                          <i class="large mdi-action-view-day left"></i>
+                           List
+                        </a>
+                    </li>
+                    <li class="collection-item">
+                        <a class="black-text waves-effect waves-teal" href="#map">
+                           <i class="large mdi-maps-map left"></i>
+                            Map
+                        </a>
+                    </li>
+                    <li class="collection-item">
+                        <a class="black-text waves-effect waves-teal" href="#search">
+                          <i class="large mdi-action-search left"></i>
+                           Search
+                        </a>
+                    </li>
+                    <li class="collection-item">
+                        <a class="black-text waves-effect waves-teal" href="#timetable">
+                           <i class="large mdi-action-schedule left"></i>
+                            Time
+                        </a>
+                    </li>
+                </ul>
                 </div>
-
-                <!-- Bottone Hamburger -->
-                <button class="hamburger" id="pull">
-                    <img src="/img/navbar_icons/minimizedNavbar.png">
-                </button>
-            </div>
-        </navbar>
+        </nav>
 
         <!-- Contenuto dinamico -->
         <div load class="content" ng-controller="CacheController as cacheCtrl">
@@ -141,8 +120,13 @@
         </div>
 
         <!--Footer-->
-        <footer class="credits credits_container">
-                <p class="text-center">Handmade in Italy by <a href="#about">TrentoLeaf+© - Chi Siamo</a>.</p>
+        <footer class="page-footer">
+               <div class="footer-copyrith">
+               <div class="container">
+                Handmade in Italy by TrentoLeaf+©.
+                <a class="right grey-text text-lightened-4" href="#about">Chi Siamo</a>
+                </div>
+                </div>
         </footer>
 
         <!--Google Analytics-->

@@ -1,19 +1,19 @@
 .dark-green {
-    background: green !important;
+    background: #4caf50 !important;
 }
 
 .green {
-    background: rgba(102, 187, 106, 1) !important;
+    background: #8bc34a !important;
 }
 
 .yellow {
-    background: #FFCA28 !important;
+    background: #ffeb3b !important;
 }
 
 .orange {
-    background: orange !important;
+    background: #ffc107 !important;
 }
 
 .red {
-    background: rgba(239,83,80, 1) !important;
+    background: #f44336 !important;
 }
