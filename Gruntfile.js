@@ -38,11 +38,11 @@ module.exports = function (grunt) {
         'gh-pages': {
             options: {
                 base: '',
-                branch: 'test-grunt-gh-pages',
+                branch: 'gh-pages',
                 message: 'Site auto-published on gh-pages by Grunt',
-                push: false
+                push: true
             },
-            src: ['index.html', 'partials/*', 'dist/*min*', 'img/*']
+            src: ['index.html', 'partials/*', 'dist/*min*', 'font/*', 'img/*', 'img/navbar_icons/mono_black/*', 'img/*/*', 'trentoleaf.appcache']
         }
     });
     grunt.loadNpmTasks('grunt-contrib-concat');
