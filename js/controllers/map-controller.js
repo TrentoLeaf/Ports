@@ -86,6 +86,82 @@
 
         // function to load the maps
         function elabotate(array) {
+
+
+
+            //3d
+            var zindex = 4;
+
+            $(".D3_card_map").each(function(i){
+                $(this).css("z-index",zindex);
+                zindex--;
+            });
+
+
+            // hover 3d maps
+            $(".D3_card_map").hover(function() {
+                if (! $(this).hasClass("map_in_viewer")) {
+                    console.log("inhover");
+                    $(this).css( "transform", "translateY(100px) rotateX(-30deg) rotateZ(-20deg)");
+                }
+                (($(this).parent()).nextAll()).find(".D3_card_map").each (function() {
+                    if (! ($(this).hasClass("map_in_viewer"))) {
+                        $(this).css("transform", "translateY(200px) rotateX(-60deg) rotateZ(-40deg)");
+                    }
+                });
+            }, function() {
+                console.log("outhover");
+                if (! $(this).hasClass("map_in_viewer")) {
+                    $(this).css( "transform", "translateY(-10px) rotateX(-60deg) rotateZ(-40deg)");
+                }
+                (($(this).parent()).nextAll()).find(".D3_card_map").each (function() {
+                    if (! ($(this).hasClass("map_in_viewer"))) {
+                        $(this).css("transform", "translateY(-20px) rotateX(-60deg) rotateZ(-40deg)");
+                    }
+                });
+            });
+
+            //click 3d maps
+
+            var put_in_viewer = function (map) {
+                // centratura sull'asse x della mappa in .D3_viewer
+                var ww = $(window).width();
+                var ww6 = ((ww*60)/100)/2;
+                var ww4 = ((ww*40)/100)/2;
+                ww = ww6 + ww4;
+
+                // dimensione della mappa rispetto a .D3_viewer
+                var dimw = (($(".D3_viewer").width())*70)/100;
+                var dimh = (($(".D3_viewer").height())*70)/100;
+
+                map.css( "transform", "translateX(-"+ww+"px)");
+                map.css( "width", dimw+"px");
+                map.css( "height", dimh+"px");
+            };
+
+            var remove_from_viewer = function (map) {
+                // traslazione x
+                var ww = $(window).width();
+                var ww6 = ((ww*60)/100)/2;
+                var ww4 = ((ww*40)/100)/2;
+                ww = (ww6 + ww4)/100;
+
+                map.css( "transform", "translateX("+ww+"px)  rotateX(-60deg) rotateZ(-40deg)");
+                map.css( "width", "150px");
+                map.css( "height", "40%");
+            };
+
+            $(".D3_card_map").click(function() {
+                var mapinviewer = $(".map_in_viewer");
+                remove_from_viewer(mapinviewer);
+                mapinviewer.removeClass("map_in_viewer");
+                $(this).addClass("map_in_viewer");
+                put_in_viewer($(this));
+            });
+
+
+
+            //load svg maps
             var snapP1PT = Snap("#SvgPovo1PT");
             Snap.load("../img/mappe/Povo1PT.svg", function(data) {
                 gestisciOggetti(data, array);
@@ -110,7 +186,7 @@
 
         // wait for the data to be loaded
         if ($scope.loading) {
-            $log.info("Data loadng...");
+            $log.info("Data loading...");
 
             $scope.$watch('loading', function(newValue, oldValue) {
                 if (!newValue && oldValue) {

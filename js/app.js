@@ -16,6 +16,9 @@
         }).when('/map', {
             templateUrl: 'partials/map.html',
             controller: 'MapController'
+        }).when('/map3d', {
+            templateUrl: 'partials/map3d.html',
+            controller: 'MapController'
         }).when('/details/:number', {
             templateUrl: 'partials/details.html',
             controller: 'DetailsController',
