@@ -1,10 +1,9 @@
 CACHE MANIFEST
-# v12
-# 08/04/2015 21:00
+# v13
+# 09/04/2015 23:00
 
 CACHE:
 
-# html files
 index.html
 partials/about.html
 partials/error.html
@@ -15,27 +14,13 @@ partials/legend.html
 partials/map.html
 partials/timetable.html
 
-# css files
-css/about.css
-css/colors.css
-css/details.css
-css/error.css
-css/map.css
-css/navbar.css
-css/style.css
+dist/combined.min.css
+dist/combined.min.js
 
-# js files
-js/app.js
-js/navbar.js
-js/script.js
-js/controllers/details-controller.js
-js/controllers/list-controllers.js
-js/controllers/search-controller.js
-js/controllers/error-controller.js
-js/controllers/map-controller.js
-js/services/data-service.js
-js/utilities/date.js
-js/utilities/room.js
+# fonts
+font/lato-light.ttf
+font/lato-regular.ttf
+font/lato-bold.ttf
 
 # img files
 img/favicon.ico
@@ -62,14 +47,10 @@ img/navbar_icons/mono_black/magnifier.png
 img/navbar_icons/mono_black/map.png
       
 # libraries
-lib/jquery/dist/jquery.min.js
-lib/snap.svg/dist/snap.svg-min.js
-lib/angular/angular.min.js
-lib/angular-route/angular-route.min.js
-
-# fonts
-http://fonts.googleapis.com/css?family=Lato:300,400,700
-http://fonts.googleapis.com/css?family=Roboto
+http://code.jquery.com/jquery-1.11.2.min.js
+http://cdn.jsdelivr.net/snap.svg/0.3.0/snap.svg-min.js
+http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js
+http://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-route.min.js
 
 NETWORK:
 *
