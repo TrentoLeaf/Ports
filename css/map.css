@@ -60,6 +60,10 @@
 }
 
 .D3_viewer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-style: italic;
     width: 60%;
     min-height: 850px;
 }
