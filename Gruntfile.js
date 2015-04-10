@@ -34,7 +34,10 @@ module.exports = function (grunt) {
                 }
             }
         },
-        clean: ["dist/*"],
+        clean: {
+            dist: ["dist/*"],
+            gh: [".grunt"]
+        },
         'gh-pages': {
             options: {
                 base: '',
@@ -42,7 +45,7 @@ module.exports = function (grunt) {
                 message: 'Site auto-published on gh-pages by Grunt',
                 push: true
             },
-            src: ['index.html', 'partials/*', 'dist/*min*', 'font/*', 'img/*', 'img/navbar_icons/mono_black/*', 'img/*/*', 'trentoleaf.appcache', 'CNAME']
+            src: ['index.html', 'partials/*', 'dist/*min*', 'font/*', 'img/*', 'img/navbar_icons/mono_black/*', 'img/*/*', 'trentoleaf.appcache', 'CNAME', 'README.md']
         }
     });
     grunt.loadNpmTasks('grunt-contrib-concat');
@@ -50,5 +53,6 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-gh-pages');
-    grunt.registerTask('default', ['clean', 'concat:css', 'cssmin:css', 'concat:js', 'uglify:js']);
+    grunt.registerTask('default', ['clean:dist', 'concat:css', 'cssmin:css', 'concat:js', 'uglify:js']);
+    grunt.registerTask('publish', ['clean:gh', 'gh-pages']);
 };
