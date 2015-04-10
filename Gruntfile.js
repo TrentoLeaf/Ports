@@ -42,7 +42,7 @@ module.exports = function (grunt) {
                 message: 'Site auto-published on gh-pages by Grunt',
                 push: true
             },
-            src: ['index.html', 'partials/*', 'dist/*min*', 'font/*', 'img/*', 'img/navbar_icons/mono_black/*', 'img/*/*', 'trentoleaf.appcache']
+            src: ['index.html', 'partials/*', 'dist/*min*', 'font/*', 'img/*', 'img/navbar_icons/mono_black/*', 'img/*/*', 'trentoleaf.appcache', 'CNAME']
         }
     });
     grunt.loadNpmTasks('grunt-contrib-concat');
