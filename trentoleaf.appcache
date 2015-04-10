@@ -1,6 +1,6 @@
 CACHE MANIFEST
-# v13
-# 09/04/2015 23:00
+# v14
+# 09/04/2015 20:56
 
 CACHE:
 
@@ -12,6 +12,7 @@ partials/search.html
 partials/details.html
 partials/legend.html
 partials/map.html
+partials/map3d.html
 partials/timetable.html
 
 dist/combined.min.css
