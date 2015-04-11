@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html ng-app="ports" manifest="trentoleaf.appcache">
+
     <head>
-        <meta charset="utf-8"> 
+        <meta charset="utf-8">
 
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -12,7 +13,7 @@
         <title>Ports: Povo offers rooms to study!</title>
 
         <!-- icon -->
-        <link rel="icon" href="img/favicon.ico" type="image/x-icon"/>
+        <link rel="icon" href="img/favicon.ico" type="image/x-icon" />
 
         <!-- frameworks -->
         <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -26,8 +27,12 @@
 
         <!-- Development -->
 <!--
+        <script src="lib/jquery/dist/jquery.min.js"></script>
+        <script src="lib/snap.svg/dist/snap.svg-min.js"></script>
+        <script src="lib/angular/angular.min.js"></script>
+        <script src="lib/angular-route/angular-route.min.js"></script>
+
         <link rel="stylesheet" href="css/font_lato.css">
-        <link rel="stylesheet" href="css/font_roboto.css">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/about.css">
         <link rel="stylesheet" href="css/colors.css">
@@ -35,11 +40,6 @@
         <link rel="stylesheet" href="css/error.css">
         <link rel="stylesheet" href="css/navbar.css">
         <link rel="stylesheet" href="css/details.css">
-
-        <script src="lib/jquery/dist/jquery.min.js"></script>
-        <script src="lib/snap.svg/dist/snap.svg-min.js"></script>
-        <script src="lib/angular/angular.min.js"></script>
-        <script src="lib/angular-route/angular-route.min.js"></script>
 
         <script src="js/script.js"></script>
         <script src="js/utilities/date.js"></script>
@@ -54,6 +54,7 @@
         <script src="js/controllers/details-controller.js"></script>
         <script src="js/controllers/error-controller.js"></script>
 -->
+
     </head>
 
     <body>
@@ -166,13 +167,20 @@
 
         <!--Google Analytics-->
         <script>
-            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-                m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-                                    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
             ga('create', 'UA-57531355-1', 'auto');
             ga('send', 'pageview');
         </script>
-
     </body>
+
 </html>
