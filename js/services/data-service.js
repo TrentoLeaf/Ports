@@ -12,7 +12,7 @@
             DateUtilities.nextOpenDay(queryDate);
             var now = queryDate.getTime();
 
-            var baseUrl = 'http://api.trentoleaf.tk/app?time=',
+            var baseUrl = 'https://trentoleaf-api.herokuapp.com/app?time=',
                 requests = [],
                 data = [];
 
