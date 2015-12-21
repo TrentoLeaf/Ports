@@ -92,11 +92,11 @@
 
 
 $(document).ready(function(){
-
+    
     var img = "<img src=\"/img/navbar_icons/minimizedNavbar.png\">";
     var imgReversed = "<img src=\"/img/navbar_icons/reverseMinNav.png\">";
     var toggleMenu = "";
-
+    
     var reverse = true;
 
     $(".hamburger").click(function(){
@@ -111,8 +111,8 @@ $(document).ready(function(){
             $(".mobileMenu").addClass("hide");
         };
     });
-
-
+    
+    
 });
 
 $(document).ready(function(){
@@ -615,7 +615,7 @@ $(function() {
             DateUtilities.nextOpenDay(queryDate);
             var now = queryDate.getTime();
 
-            var baseUrl = 'http://api.trentoleaf.tk/app?time=',
+            var baseUrl = 'https://trentoleaf-api.herokuapp.com/app?time=',
                 requests = [],
                 data = [];
 
